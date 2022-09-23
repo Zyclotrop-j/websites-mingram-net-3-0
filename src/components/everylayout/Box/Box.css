@@ -1,0 +1,16 @@
+box-l-section,
+box-l-article,
+box-l-header,
+box-l-footer,
+box-l-main,
+box-l-navigation,
+box-l-aside,
+box-l {
+  display: flex;
+  flex-direction: column;
+  padding: var(--s-3);
+  border-width: var(--border-thin);
+  /* ↓ For high contrast mode */
+  outline: var(--border-thin) solid transparent;
+  outline-offset: calc(var(--border-thin) * -1);
+}

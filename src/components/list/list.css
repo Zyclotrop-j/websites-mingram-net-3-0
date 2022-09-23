@@ -1,0 +1,50 @@
+c-card, c-card-header, c-card-content, c-card-image, c-card-footer, c-card-header-title, c-card-header-icon, c-card-footer-item {
+    display: block;
+}
+.content c-card-header-title > p,
+.content c-card-header-title > h1,
+.content c-card-header-title > h2,
+.content c-card-header-title > h3,
+.content c-card-header-title > h4,
+.content c-card-header-title > h5,
+.content c-card-header-title > h6,
+.content c-card-header-title > h1.title,
+.content c-card-header-title > h2.title,
+.content c-card-header-title > h3.title,
+.content c-card-header-title > h4.title,
+.content c-card-header-title > h5.title,
+.content c-card-header-title > h6.title,
+.content c-card-header-title > h1.subtitle,
+.content c-card-header-title > h2.subtitle,
+.content c-card-header-title > h3.subtitle,
+.content c-card-header-title > h4.subtitle,
+.content c-card-header-title > h5.subtitle,
+.content c-card-header-title > h6.subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+c-card-image > icon-l {
+    width: 100%;
+}
+c-card-image > icon-l > svg.icon, c-card-image > icon-l > svg {
+    width: 100%;
+    height: auto;
+}
+c-card-footer-item > button.button:only-child, c-card-footer-item > a.button:only-child {
+    display: inline-block;
+    height: calc( 100% + 2* 0.75rem);
+    width: calc( 100% + 2* 0.75rem);
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    margin-top: -0.75rem;
+    margin-bottom: -0.75rem;
+}
+c-card-footer-item:not(:last-child) > button.button:only-child, c-card-footer-item:not(:last-child) > a.button:only-child {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right-width: 0px;
+}
+c-card-footer-item:not(:first-child) > button.button:only-child, c-card-footer-item:not(:first-child) > a.button:only-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}

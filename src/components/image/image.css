@@ -1,0 +1,14 @@
+.image.round {
+    border-radius: 9999px;
+}
+c-card-image.card-image > img.image {
+    width: 100%;
+}
+c-list-item-image > icon-l {
+    font-size: 6em;
+}
+c-list-item-image > img.image {
+    width: 64px;
+    height: auto;
+    aspect-ratio: 1;
+}

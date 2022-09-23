@@ -1,0 +1,72 @@
+
+:root {
+    --tw-ring-inset: var(--tw-empty, );
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59, 130, 246, 0.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --base-500: #a0aec0;
+    --base-200: #e2e8f0;
+    --base-300: #e2e8f0;
+    --base-400: #cbd5e0;
+    --main-400: #7f9cf5;
+    --main-200: #c3dafe;
+    --main-100: #ebf4ff;
+    --solid: #fff;
+    --solid-900: #4a5568;
+    --sidebar-bg: #edf2f7;
+    --sidebar-color: #4a5568;
+    --shadow: 0 10px 15px -3px rgba(36,69,101,0.19),0 4px 6px -2px #d0dce8;
+    --shadow-active: 0 0 0 2px currentColor,0 10px 15px -3px rgba(36,69,101,0.19),0 4px 6px -2px #d0dce8;
+}
+
+.sr-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.colorpicker {
+    --picker-height: 150px;
+    --slider-width: 150px;
+    --picker-width: 150px;
+    --focus-color: gray;
+}
+.colorpicker .wrapper > div:nth-child(2), .colorpicker .wrapper > div:nth-child(3) {
+    --slider-width: 150px;
+    --picker-height: 15px;
+}
+.colorpicker .wrapper .slider > div {
+    height: 25px;
+}
+.colorpicker > span > button {
+    margin: 0;
+    background-color: transparent;
+    color: rgba(255, 255, 255, .7);
+    border: none;
+}
+.gjs-block-label figure.w100 > svg {
+    width: 100%;
+}
+.gjs-block-label figure.w80 > svg {
+    width: 80%;
+}
+.gjs-sm-property > .gjs-sm-label:not(.gjs-four-color) + .gjs-fields {
+    opacity: 0.5;
+}
+:root {
+    --emphasis: rgba(200, 200, 300, 0.1);
+}
+.gjs-block:hover {
+    --emphasis: currentColor;
+}
+.gjs-block svg rect {
+    transition: fill 0.5s;
+}

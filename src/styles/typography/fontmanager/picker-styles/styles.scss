@@ -1,0 +1,18 @@
+@import "variables";
+
+// Match all font picker IDs (e.g. "font-picker", "font-picker-main", ...)
+div[id^="font-picker"],div[class^="font-picker"]  {
+	@import "reset";
+
+	// Style font picker container
+	position: relative;
+	display: inline-block;
+	width: 120px;
+	box-shadow: $box-shadow;
+
+	@import "dropdown-button";
+	@import "dropdown-list";
+}
+.gjs-sm-font-lookup {
+	z-index: 20;
+}
