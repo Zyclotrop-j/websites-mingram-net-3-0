@@ -11,6 +11,7 @@ import layout from './components/layout';
 import hero from './hero/hero';
 import blog from './blog/blog';
 import tag from './components/tag';
+import map from './components/map';
 
 export default [
     ...grid12,
@@ -26,4 +27,5 @@ export default [
     ...hero,
     ...blog,
     ...tag,
+    ...map,
 ];

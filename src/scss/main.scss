@@ -493,3 +493,7 @@ a[data-type=block] > span + icon-l {
 [data-spacer=vertical] {
     background: linear-gradient(0deg, transparent 0%, transparent calc(50% - var(--w2) / 2 - 1%), var(--c2) calc(50% - var(--w2) / 2), var(--c2) calc(50% + var(--w2) / 2), transparent calc(50% - var(--w2) / 2 + 1%), transparent 100%);
 }
+map-l {
+    display: flex;
+    flex-direction: column;
+}

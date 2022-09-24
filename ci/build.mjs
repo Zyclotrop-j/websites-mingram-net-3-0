@@ -27,6 +27,9 @@ await esbuild.build({
 });
 
 await fs.copyFile('src/scss/layer.css', 'build/layer.css');
+await fs.copyFile('node_modules/leaflet/dist/leaflet.css', 'build/leaflet.css');
+await fs.cp('node_modules/leaflet/dist/images', 'build/images', { recursive: true });
+
 
 await esbuild.build({
     entryPoints: ['src/website.js'],

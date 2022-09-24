@@ -10,6 +10,7 @@ import privateClass from './helpers/privateClass';
 
 import classSelectTrait from "./traits/custom_class";
 import iconTrait from "./traits/icon";
+import coordinateTrait from "./traits/coordinate";
 
 import components from './components/index';
 
@@ -42,6 +43,7 @@ const editor = grapesjs.init({
     plugins: privateClass([
         iconTrait,
         classSelectTrait,
+        coordinateTrait,
         initAssets,
 
         ...styles,

@@ -21,6 +21,7 @@ import list from "./list/list";
 import query from "./query/query";
 import other from "./other/other";
 import tag from "./tag/tag";
+import map from "./map/index";
 
 export default [
     grid12,
@@ -46,4 +47,5 @@ export default [
     query,
     other,
     tag,
+    map,
 ];
