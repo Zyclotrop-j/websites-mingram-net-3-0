@@ -12,6 +12,7 @@ import hero from './hero/hero';
 import blog from './blog/blog';
 import tag from './components/tag';
 import map from './components/map';
+import form from './components/form';
 
 export default [
     ...grid12,
@@ -28,4 +29,5 @@ export default [
     ...blog,
     ...tag,
     ...map,
+    ...form,
 ];
