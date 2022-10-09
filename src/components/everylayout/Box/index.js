@@ -41,6 +41,9 @@ export default editor => {
 
                   // Border
                   'border-radius',
+                  'border-color',
+                  'border-width',
+                  'border-style',
                 ],
                 traits: [
                   'padding',

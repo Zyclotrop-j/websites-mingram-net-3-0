@@ -230,5 +230,18 @@ export default editor => {
           ]
         },
       ],
-  });
+    });
+    styleManager.addSector('sidebar-width', {
+      name: 'Sidebar width overwrite',
+      property: 'side-width',
+      open: false,
+      properties: [
+        {
+          id: 'sidebar-sideWidth',
+          label: 'Width (overwrite)',
+          property: '--sideWidth',
+          type: 'size-preset',
+        },
+      ]
+    });
 }

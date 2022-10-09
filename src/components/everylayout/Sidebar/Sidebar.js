@@ -25,9 +25,14 @@ export default class Sidebar extends HTMLElement {
             gap: ${this.space};
             ${this.noStretch ? 'align-items: flex-start;' : ''}
           }
+
+          [data-i="${this.i}"] {
+            --wideWidth: var(--sideWidth${this.sideWidth ? `, ${this.sideWidth}` : ''});
+          }
+          
       
           [data-i="${this.i}"] > * {
-            ${this.sideWidth ? `flex-basis: ${this.sideWidth};` : ''}
+            ${this.sideWidth ? `flex-basis: var(--wideWidth);` : ''}
           }
       
           [data-i="${this.i}"] > ${this.side !== 'left' ? `:first-child` : `:last-child`} {

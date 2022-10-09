@@ -12,7 +12,7 @@ export default editor => {
     const defaultView = defaultType.view;
 
     editor.Components.addType(type, {
-        isComponent: el => el?.tagName?.toLowerCase() === 'tag', // only used if we need to parse external html - internal ones already has data-gjs-type-attr
+        isComponent: el => el?.tagName?.toLowerCase() === 'span' && el?.classList?.contains('tag'), // only used if we need to parse external html - internal ones already has data-gjs-type-attr
         model: {
             defaults: {
                 tagName: 'span',
@@ -25,7 +25,7 @@ export default editor => {
                 stylable: [
                   'background-color',
                   'font-size', 'color', 'font-family', /*'font-style',*/ 'font-weight', 
-                  /*'text-transform', 'text-decoration',*/ 'text-shadow', 
+                  'text-transform', /*'text-decoration',*/ 'text-shadow', 
                   'text-align', 'line-height', 'letter-spacing',
                   //'word-spacing', 'text-overflow', 
                   //'white-space', 'word-break', 'hyphens', 'line-break', 'writing-mode', 'text-orientation', 'overflow-wrap'

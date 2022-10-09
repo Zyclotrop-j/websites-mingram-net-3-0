@@ -27,7 +27,8 @@ export default editor => {
                   'padding',
                   'margin',
                   'color',
-                  'background-color'
+                  'background-color',
+                  '--sideWidth'
                 ],
                 traits: [
                   {

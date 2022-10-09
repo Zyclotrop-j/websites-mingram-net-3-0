@@ -21,7 +21,7 @@ export default class Grid extends HTMLElement {
 
           @supports (width: min(${this.min}, 100%)) {
             [data-i="${this.i}"] {
-              grid-template-columns: repeat(auto-fill, minmax(min(${this.min}, 100%), 1fr));
+              grid-template-columns: repeat(var(--fillmode, auto-fill), minmax(min(${this.min}, 100%), 1fr));
             }
           }
         `.replace(/\s\s+/g, ' ').trim();

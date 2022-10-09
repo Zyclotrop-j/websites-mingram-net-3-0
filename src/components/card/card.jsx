@@ -59,6 +59,16 @@ export default editor => {
                   'justify-content',
                   'align-content',
                   'align-items',
+
+                  // border
+                  'border-color',
+                  'border-radius',
+                  'border-width',
+                  'border-style',
+
+                  // space
+                  'padding',
+                  'margin',
                 ],
                 traits: [],
                 components: [{
@@ -132,7 +142,7 @@ export default editor => {
                 'background-color',
 
                 'font-size', 'color', 'font-family', /*'font-style',*/ 'font-weight', 
-                /*'text-transform', 'text-decoration',*/ 'text-shadow', 
+                'text-transform', /*'text-decoration',*/ 'text-shadow', 
                 'text-align', 'line-height', 'letter-spacing',
                 //'word-spacing', 'text-overflow', 
                 //'white-space', 'word-break', 'hyphens', 'line-break', 'writing-mode', 'text-orientation', 'overflow-wrap'

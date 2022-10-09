@@ -111,7 +111,7 @@ export default [
               margin-top:var(--P25);
             }
             #idxz7{
-              --w:12;
+              --wg:12;
             }
         }          
         </style>`,

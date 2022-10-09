@@ -16,7 +16,8 @@ export default editor => {
                 draggable: draggable('*'),
                 droppable: '*',
                 attributes: {
-                  mode: 'lock'
+                  mode: 'lock',
+                  auto: 'none',
                 },
                 stylable: [
                   'width',
@@ -42,8 +43,20 @@ export default editor => {
 
                   // Border
                   'border-radius',
+                  'border-color',
+                  'border-width',
+                  'border-style',
                 ],
                 traits: [
+                  {
+                    type: 'select',
+                    options: [
+                      { value: 'none', name: 'none' },
+                      { value: 'height', name: 'fill height' },
+                    ],
+                    label: 'Auto-fill height?',
+                    name: 'auto',
+                  },
                   {
                     type: 'select',
                     options: [

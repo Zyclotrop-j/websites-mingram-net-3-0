@@ -187,7 +187,7 @@ export default editor => {
         {
           id: 'grid-12-width-item-width-w',
           label: 'Width (overwrite)',
-          property: '--w',
+          property: '--wg',
           type: 'select',
           default: '',
           options: [
@@ -203,6 +203,23 @@ export default editor => {
             { id: '10', label: '10' },
             { id: '11', label: '11' },
             { id: '12', label: '12' },
+          ]
+        },
+      ]
+    });
+    styleManager.addSector('grid-l-fillmode', {
+      name: 'Fill mode',
+      open: false,
+      properties: [
+        {
+          id: 'grid-l-fillmode',
+          label: 'Fill mode',
+          property: '--fillmode',
+          type: 'select',
+          default: 'auto-fill',
+          options: [
+            { id: 'auto-fill', label: 'Default' },
+            { id: 'auto-fit', label: 'Collapse' },
           ]
         },
       ]

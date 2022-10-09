@@ -61,6 +61,8 @@ const Map = class extends HTMLElement {
       .slot {
         z-index: 999;
         position: relative;
+        display: flex;
+        flex-direction: column;
       }
       .leaflet-control-zoom {
         display: none;
@@ -76,8 +78,11 @@ const Map = class extends HTMLElement {
       :host([mode=edit]) .leaflet-control-zoom {
         display: initial;
       }
-      :host([mode=edit]) root {
+      :host([mode=edit]) .root {
         
+      }
+      :host([auto=height]) .root, :host([auto=height]) .slot {
+        height: 100%;
       }
     `;
     const link = document.createElement('link');

@@ -44,6 +44,9 @@ export default editor => {
                   'align-self',
                   'justify-self',
 
+                  // special
+                  '--fillmode'
+
                 ],
                 traits: [
                   {

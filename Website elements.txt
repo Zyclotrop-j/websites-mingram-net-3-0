@@ -1,9 +1,9 @@
 - Flex-Grid 12 (with gap) P
--- Flex item (same on flex items) 
--- with mobile
+-- Flex item (same on flex items)  Y
+-- with mobile Y
 - Flex container (direction, justify, align) Y
--- Flex item (same on flex items) 
--- width on flex-children
+-- Flex item (same on flex items) Y 
+-- width on flex-children P
 - Spacer Y
 - Grid-Layout (with gap) // https://github.com/Ju99ernaut/grapesjs-plugin-toolbox
 -- auto columns
@@ -33,7 +33,7 @@
 -- Card paragraph Y (implicit)
 -- Card footer Y
 -- Card actions (buttons) Y (implicit)
--- Card action (full card link)
+-- Card action (full card link) Y
 -- Person card (header + avatar)
 - Image Y
 - Center horizontal Y
@@ -72,6 +72,9 @@ BIG components
 -- Burger menu
 -> https://github.com/artf/grapesjs-navbar
 -> https://tailblocks.cc/ <== THIS!!!
+
+Common tokens
+- from above components
 
 MORE items
 - Collapse/accordion (https://github.com/anubhavjain786/grapesjs-accordion)

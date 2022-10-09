@@ -44,10 +44,8 @@ export default editor => {
                   name: 'default-name',
                 },
                 stylable: [
-                  'padding-top',
-                  'padding-bottom',
-                  'margin-top',
-                  'margin-bottom',
+                  'padding',
+                  'margin',
                   'background-color',
                   
                   // Item
@@ -188,6 +186,11 @@ export default editor => {
                 }
               },
               stylable: [
+                'border-radius',
+                'border-color',
+                'border-width',
+                'border-style',
+
                 'padding',
                 'margin',
                 'background-color',
@@ -201,7 +204,7 @@ export default editor => {
                 'justify-self',
 
                 // width overwrite
-                '--w',
+                '--wg',
               ],
               traits: [
                 'name',
@@ -237,7 +240,7 @@ export default editor => {
                 grid-item[data-width="auto"] {
                   flex-grow: 1;
                 }
-                grid-item { display: inline; flex-grow: var(--w); max-width: calc( 100% / 12 * var(--w) ); }
+                grid-item { display: inline; flex-grow: var(--wg, var(--w)); max-width: calc( 100% / 12 * var(--wg, var(--w)) ); }
               `,
             }
       },

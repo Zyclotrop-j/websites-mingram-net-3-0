@@ -84,4 +84,24 @@ export default editor => {
       editor.on('style:sector:update', addToTypography);
     }
 
+    const addBorderColorToBorder = () => styleManager.addProperty('border',  {
+      label: 'Border color',
+      property: 'border-color',
+      type: 'color-preset',
+    }, { at: 1 });
+    const bordersector = styleManager.getSector('typborderography');
+    if(bordersector) {
+      addBorderColorToBorder();
+    } else {
+      const addToBorder = (sector) => {
+        if(sector.getId() === 'border') {
+          addBorderColorToBorder();
+          editor.off('style:sector:add', addToBorder);
+          editor.off('style:sector:update', addToBorder);
+        }
+      };
+      editor.on('style:sector:add', addToBorder);
+      editor.on('style:sector:update', addToBorder);
+    }
+
 }

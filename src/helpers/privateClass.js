@@ -6,17 +6,18 @@ const modifyPluginArg = plugin => (editor, ...args) => {
     ).flatMap(trait => 
         trait.options.flatMap(opt => opt.value.split(' '))
     ).filter(i => i?.trim?.()) ?? [];
+    const fn3 = arg => arg?.model?.defaults?.privateClass ?? [];
     const addType = (name, obj) => {
-        const classes = [...fn2(obj), ...fn(obj)].filter((i, idx, arr) => i && arr.indexOf(i) === idx);
+        const classes = [...fn3(obj), ...fn2(obj), ...fn(obj)].filter((i, idx, arr) => i && arr.indexOf(i) === idx);
         const c = editor.Components.addType(name, obj);
         classes.forEach(className => {
-            const getSelector = () => editor.Selectors.getAll().findWhere({
+            const getSelectors = () => editor.Selectors.getAll().where({
                 type: 1,
                 name: className,
             });
-            const existingSelector = getSelector();
-            if(existingSelector) {
-                existingSelector.set({ private: true });
+            const existingSelectors = getSelectors();
+            if(existingSelectors.length) {
+                existingSelector.forEach(s => s.set({ private: true }));
             } else {
                 const selectorFn =  (selector) => { 
                     if(selector.isClass() && selector.get('name') === className) {

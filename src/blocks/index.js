@@ -13,6 +13,8 @@ import blog from './blog/blog';
 import tag from './components/tag';
 import map from './components/map';
 import form from './components/form';
+import contact from './contact/contact';
+import content from './content/content';
 
 export default [
     ...grid12,
@@ -30,4 +32,6 @@ export default [
     ...tag,
     ...map,
     ...form,
+    ...contact,
+    ...content,
 ];

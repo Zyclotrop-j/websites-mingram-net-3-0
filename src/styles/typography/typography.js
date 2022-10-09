@@ -103,6 +103,19 @@ export default editor => {
           { id: 'bottom', label: 'bottom' },
       ]
     }, { at: 4 });
+    styleManager.addProperty('typography', {
+      type: 'select',
+      label: 'Caps',
+      property: 'text-transform',
+      options: [
+          { id: 'none', label: 'none' },
+          { id: 'capitalize', label: 'capitalize' },
+          { id: 'uppercase', label: 'uppercase' },
+          { id: 'lowercase', label: 'lowercase' },
+          { id: 'full-width', label: 'full-width' },
+          { id: 'full-size-kana', label: 'full-size-kana' },
+      ]
+    }, { at: 5 });
 
       
 }
