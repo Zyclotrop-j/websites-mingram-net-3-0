@@ -11,7 +11,7 @@ const memoize = function(factory, ctx) {
 export const colorToRGBA = (function() {
     const canvas = document.createElement('canvas');
     canvas.width = canvas.height = 1;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
 
     return memoize(function(col, name) {
         ctx.clearRect(0, 0, 1, 1);

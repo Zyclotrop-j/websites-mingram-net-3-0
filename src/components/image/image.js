@@ -12,7 +12,30 @@ export default editor => {
     const {
         id: imageId, model: Model, view
     } = editor.DomComponents.getType("image");
+
     class Image extends Model {
+
+        initialize(o) {
+            // not pretty, but best workaround I could find :(
+            Model.prototype.initialize.apply(this, arguments);
+            const checkAndRemoveClass = () => {
+                try {
+                    this.view.$el.removeClass(`gjs-plh-image`);
+                    return true;
+                } catch(e) {
+                    return false;
+                }
+            }
+            const scheudle = () => {
+                setTimeout(() => {
+                    if(!checkAndRemoveClass()) {
+                        scheudle();
+                    }
+                }, 200);
+            }
+            scheudle();
+        }
+
         get defaults() {
             return {
                 ...super.defaults,

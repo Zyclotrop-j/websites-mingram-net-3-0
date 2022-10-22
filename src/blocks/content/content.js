@@ -1,8 +1,11 @@
+import content4 from './content-4.svg';
+import content4image from './content-4-image.svg';
+
 export default [
     {
         id: 'content-4',
         label: `<figure style="margin: 5px;" class="w100">
-            ${""}
+            ${content4}
         <figcaption>Content four</figcaption></figure>`,
         content: `<box-l-section padding="0" id="i4oo-3">
         <box-l id="is8rt">
@@ -408,6 +411,344 @@ export default [
         category: 'Content',
         kind: 'Section'
     },
+    {
+      id: 'content-4-image',
+      label: `<figure style="margin: 5px;" class="w100">
+          ${content4image}
+      <figcaption>Content four with images</figcaption></figure>`,
+      content: `<box-l-section padding="0" id="i4oo-3">
+      <grid-l min="var(--xl)" space="var(--s0)" id="iifcr">
+        <box-l id="iycj2">
+          <h2 class="is-2 h-tag" name="default-name" id="id8rr">
+            <span id="isqa">Pitchfork Kickstarter Taxidermy</span>
+          </h2>
+          <box-l padding="0" id="idpni">
+            <div data-spacer="vertical" id="iwbai"></div>
+            <span data-spacer="horizontal" id="i0j8i"></span>
+          </box-l>
+        </box-l>
+        <p class="content" name="default-name" id="iolcw">
+          <span id="ia1f">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven&#039;t heard of them man bun deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</span>
+        </p>
+      </grid-l>
+      <grid-l id="iigw">
+        <c-card class="card" id="ikqg">
+          <c-card-image class="card-image" id="i59rx">
+            <img class="image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImZpbGw6IHJnYmEoMCwwLDAsMC4xNSk7IHRyYW5zZm9ybTogc2NhbGUoMC43NSkiPgogICAgICAgIDxwYXRoIGQ9Ik04LjUgMTMuNWwyLjUgMyAzLjUtNC41IDQuNSA2SDVtMTYgMVY1YTIgMiAwIDAgMC0yLTJINWMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMnoiPjwvcGF0aD4KICAgICAgPC9zdmc+" id="i2xi"/>
+          </c-card-image>
+          <c-card-content class="card-content" id="i3jz">
+            <span name="default-name" class="tag not-round not-light is-default-size" id="i4ea7"><span id="iawol">Subtitle</span></span>
+          </c-card-content>
+          <c-card-header class="card-header" id="i00p">
+            <c-card-header-title class="card-header-title" id="iide">
+              <h2 class="is-2" name="default-name" id="ivz7t">
+                <span id="iv15k">Chichen Itza</span>
+              </h2>
+            </c-card-header-title>
+          </c-card-header>
+          <c-card-content class="card-content" id="i7y88">
+            <span id="iv6rs">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</span>
+          </c-card-content>
+        </c-card>
+        <c-card class="card" id="i374l">
+          <c-card-image class="card-image" id="irhju">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImZpbGw6IHJnYmEoMCwwLDAsMC4xNSk7IHRyYW5zZm9ybTogc2NhbGUoMC43NSkiPgogICAgICAgIDxwYXRoIGQ9Ik04LjUgMTMuNWwyLjUgMyAzLjUtNC41IDQuNSA2SDVtMTYgMVY1YTIgMiAwIDAgMC0yLTJINWMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMnoiPjwvcGF0aD4KICAgICAgPC9zdmc+" id="i5llt" class="image"/>
+          </c-card-image>
+          <c-card-content class="card-content" id="itekv">
+            <span class="tag not-round not-light is-default-size" name="default-name" id="ide1l"><span id="ij2qe">Subtitle</span></span>
+          </c-card-content>
+          <c-card-header class="card-header" id="i4wwg">
+            <c-card-header-title class="card-header-title" id="iw01j">
+              <h2 class="is-2" name="default-name" id="iobnb">
+                <span id="i0ep8">Colosseum Roma</span>
+              </h2>
+            </c-card-header-title>
+          </c-card-header>
+          <c-card-content class="card-content" id="i1xas">
+            <span id="ijm7e">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</span>
+          </c-card-content>
+        </c-card>
+        <c-card class="card" id="ix62k">
+          <c-card-image class="card-image" id="iv0il">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImZpbGw6IHJnYmEoMCwwLDAsMC4xNSk7IHRyYW5zZm9ybTogc2NhbGUoMC43NSkiPgogICAgICAgIDxwYXRoIGQ9Ik04LjUgMTMuNWwyLjUgMyAzLjUtNC41IDQuNSA2SDVtMTYgMVY1YTIgMiAwIDAgMC0yLTJINWMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMnoiPjwvcGF0aD4KICAgICAgPC9zdmc+" id="ioo66" class="image"/>
+          </c-card-image>
+          <c-card-content class="card-content" id="ibis7">
+            <span class="tag not-round not-light is-default-size" name="default-name" id="iwur3"><span id="inaux">Subtitle</span></span>
+          </c-card-content>
+          <c-card-header class="card-header" id="ivhkb">
+            <c-card-header-title class="card-header-title" id="izjjq">
+              <h2 class="is-2" name="default-name" id="il6dn">
+                <span id="iy3zr">Great Pyramid of Giza</span>
+              </h2>
+            </c-card-header-title>
+          </c-card-header>
+          <c-card-content class="card-content" id="ickhs">
+            <span id="is2c4">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</span>
+          </c-card-content>
+        </c-card>
+        <c-card class="card" id="iywgo">
+          <c-card-image class="card-image" id="it01s">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImZpbGw6IHJnYmEoMCwwLDAsMC4xNSk7IHRyYW5zZm9ybTogc2NhbGUoMC43NSkiPgogICAgICAgIDxwYXRoIGQ9Ik04LjUgMTMuNWwyLjUgMyAzLjUtNC41IDQuNSA2SDVtMTYgMVY1YTIgMiAwIDAgMC0yLTJINWMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMnoiPjwvcGF0aD4KICAgICAgPC9zdmc+" id="iqazv" class="image"/>
+          </c-card-image>
+          <c-card-content class="card-content" id="i9sd9">
+            <span class="tag not-round not-light is-default-size" name="default-name" id="i5eyj"><span id="ihcc7">subtitle</span></span>
+          </c-card-content>
+          <c-card-header class="card-header" id="ih4uf">
+            <c-card-header-title class="card-header-title" id="inkvu">
+              <h2 class="is-2" name="default-name" id="imaqp">
+                <span id="i4yrh">San Francisco</span>
+              </h2>
+            </c-card-header-title>
+          </c-card-header>
+          <c-card-content class="card-content" id="iz95g">
+            <span id="imx7i">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</span>
+          </c-card-content>
+        </c-card>
+      </grid-l>
+    </box-l-section><style>
+    #i4oo-3{
+      align-items:center;
+      margin-left:var(--L5);
+      margin-right:var(--L5);
+      margin-bottom:var(--L24);
+      margin-top:var(--L24);
+    }
+    #iifcr{
+      justify-content:space-between;
+      align-content:space-between;
+      align-items:stretch;
+      align-self:stretch;
+      padding-bottom:var(--L20);
+    }
+    #iigw{
+      --fillmode:auto-fit;
+      align-self:stretch;
+    }
+    #i2xi{
+      height:172px;
+    }
+    #i3jz{
+      padding-top:var(--L6);
+      padding-bottom:var(--O-0);
+      padding-left:var(--L6);
+      padding-right:var(--L6);
+      letter-spacing:0.1em;
+      font-size:0.75rem;
+    }
+    #iide{
+      padding-top:var(--O-0);
+      padding-bottom:var(--L4);
+      padding-left:var(--O-0);
+    }
+    #i00p{
+      padding-left:var(--L6);
+      padding-right:var(--L6);
+    }
+    #i7y88{
+      padding-top:var(--O-0);
+      padding-left:var(--L6);
+      padding-bottom:var(--L6);
+      padding-right:var(--L6);
+      line-height:1.625rem;
+      font-size:1rem;
+    }
+    #ivz7t{
+      font-size:1.125rem;
+      line-height:1.75rem;
+      font-weight:600;
+    }
+    #i4ea7{
+      background-color:var(--transparent);
+      text-transform:uppercase;
+      color:var(--primary);
+      font-weight:600;
+      letter-spacing:0.1rem;
+      font-size:0.75rem;
+      line-height:1rem;
+      padding-left:var(--O-0);
+    }
+    #ikqg{
+      background-color:var(--white-ter);
+    }
+    #iycj2{
+      padding-top:var(--O-0);
+    }
+    #iqazv{
+      height:172px;
+    }
+    #i5eyj{
+      background-color:var(--transparent);
+      text-transform:uppercase;
+      color:var(--primary);
+      font-weight:600;
+      letter-spacing:0.1rem;
+      font-size:0.75rem;
+      line-height:1rem;
+      padding-left:var(--O-0);
+    }
+    #i9sd9{
+      padding-top:var(--L6);
+      padding-bottom:var(--O-0);
+      padding-left:var(--L6);
+      padding-right:var(--L6);
+      letter-spacing:0.1em;
+      font-size:0.75rem;
+    }
+    #imaqp{
+      font-size:1.125rem;
+      line-height:1.75rem;
+      font-weight:600;
+    }
+    #inkvu{
+      padding-top:var(--O-0);
+      padding-bottom:var(--L4);
+      padding-left:var(--O-0);
+    }
+    #ih4uf{
+      padding-left:var(--L6);
+      padding-right:var(--L6);
+    }
+    #iz95g{
+      padding-top:var(--O-0);
+      padding-left:var(--L6);
+      padding-bottom:var(--L6);
+      padding-right:var(--L6);
+      line-height:1.625rem;
+      font-size:1rem;
+    }
+    #iywgo{
+      background-color:var(--white-ter);
+    }
+    #ioo66{
+      height:172px;
+    }
+    #iwur3{
+      background-color:var(--transparent);
+      text-transform:uppercase;
+      color:var(--primary);
+      font-weight:600;
+      letter-spacing:0.1rem;
+      font-size:0.75rem;
+      line-height:1rem;
+      padding-left:var(--O-0);
+    }
+    #ibis7{
+      padding-top:var(--L6);
+      padding-bottom:var(--O-0);
+      padding-left:var(--L6);
+      padding-right:var(--L6);
+      letter-spacing:0.1em;
+      font-size:0.75rem;
+    }
+    #il6dn{
+      font-size:1.125rem;
+      line-height:1.75rem;
+      font-weight:600;
+    }
+    #izjjq{
+      padding-top:var(--O-0);
+      padding-bottom:var(--L4);
+      padding-left:var(--O-0);
+    }
+    #ivhkb{
+      padding-left:var(--L6);
+      padding-right:var(--L6);
+    }
+    #ickhs{
+      padding-top:var(--O-0);
+      padding-left:var(--L6);
+      padding-bottom:var(--L6);
+      padding-right:var(--L6);
+      line-height:1.625rem;
+      font-size:1rem;
+    }
+    #ix62k{
+      background-color:var(--white-ter);
+    }
+    #i5llt{
+      height:172px;
+    }
+    #ide1l{
+      background-color:var(--transparent);
+      text-transform:uppercase;
+      color:var(--primary);
+      font-weight:600;
+      letter-spacing:0.1rem;
+      font-size:0.75rem;
+      line-height:1rem;
+      padding-left:var(--O-0);
+    }
+    #itekv{
+      padding-top:var(--L6);
+      padding-bottom:var(--O-0);
+      padding-left:var(--L6);
+      padding-right:var(--L6);
+      letter-spacing:0.1em;
+      font-size:0.75rem;
+    }
+    #iobnb{
+      font-size:1.125rem;
+      line-height:1.75rem;
+      font-weight:600;
+    }
+    #iw01j{
+      padding-top:var(--O-0);
+      padding-bottom:var(--L4);
+      padding-left:var(--O-0);
+    }
+    #i4wwg{
+      padding-left:var(--L6);
+      padding-right:var(--L6);
+    }
+    #i1xas{
+      padding-top:var(--O-0);
+      padding-left:var(--L6);
+      padding-bottom:var(--L6);
+      padding-right:var(--L6);
+      line-height:1.625rem;
+      font-size:1rem;
+    }
+    #i374l{
+      background-color:var(--white-ter);
+    }
+    #id8rr{
+      font-size:1.875rem;
+      line-height:2.25rem;
+      margin-bottom:var(--O-0);
+    }
+    #iolcw{
+      line-height:1.625rem;
+      padding-top:var(--O-0);
+    }
+    #iwbai{
+      height:0.25rem;
+      --w2:100%;
+      color:var(--primary);
+    }
+    #i0j8i{
+      width:5rem;
+      --w:0;
+    }
+    #idpni{
+      align-self:flex-start;
+    }
+    @media (max-width: 480px){
+      #iifcr{
+        padding-bottom:var(--L4);
+      }
+      #iycj2{
+        margin-bottom:var(--O-0);
+        padding-bottom:var(--O-0);
+      }
+      #iolcw{
+        padding-bottom:var(--O-0);
+        margin-bottom:var(--O-0);
+      }
+    }    
+    </style>`,
+      category: 'Content',
+      kind: 'Section'
+  },
 ];
 
     
