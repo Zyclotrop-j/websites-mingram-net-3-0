@@ -20,6 +20,8 @@ import blocks from './blocks/index';
 
 import commands from './commands/index';
 
+import blockManager from './blockmanager/blockmanager';
+
 const div = document.createElement("div");
 const editor = grapesjs.init({
     container : div,
@@ -68,10 +70,11 @@ const editor = grapesjs.init({
       }*/
     },
     blockManager: {
-        blocks
+        blocks,
+        custom: true,
     },
 });
 
-
-
 document.body.appendChild(div);
+document.body.appendChild(blockManager(editor));
+

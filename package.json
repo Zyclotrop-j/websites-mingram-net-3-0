@@ -19,10 +19,12 @@
   "license": "ISC",
   "dependencies": {
     "@iconify/json": "^2.1.99",
+    "@lyrasearch/lyra": "^0.2.7",
     "@tarekraafat/autocomplete.js": "^10.2.7",
     "animate.css": "^4.1.1",
     "bulma": "^0.9.4",
     "bulma-list": "^1.2.0",
+    "collect.js": "^4.34.3",
     "fuse.js": "^6.6.2",
     "grapesjs": "^0.19.5",
     "grapesjs-preset-webpage": "^0.1.11",

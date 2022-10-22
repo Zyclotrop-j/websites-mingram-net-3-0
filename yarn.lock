@@ -50,6 +50,11 @@
     kolorist "^1.5.1"
     local-pkg "^0.4.1"
 
+"@lyrasearch/lyra@^0.2.7":
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/@lyrasearch/lyra/-/lyra-0.2.7.tgz#1ce05ac4799f2a5dfdfc009e91b609f867bce1f1"
+  integrity sha512-Mt8fTxCNXmKyYtYIQhgzf0E/Bfnp9IDMBZGhRPRsCxC0t3RjDsNet01tMvLhkeQgc22+XzgSM8qORaUAZ9PQtA==
+
 "@tarekraafat/autocomplete.js@^10.2.7":
   version "10.2.7"
   resolved "https://registry.yarnpkg.com/@tarekraafat/autocomplete.js/-/autocomplete.js-10.2.7.tgz#dca809890cec322379a2b430632d46a14f9f2f91"
@@ -290,6 +295,11 @@ codemirror@^5.63.0:
   version "5.65.7"
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.65.7.tgz#29af41ce5f4c2b8f1c1e16f4e645ff392823716a"
   integrity sha512-zb67cXzgugIQmb6tfD4G11ILjYoMfTjwcjn+cWsa4GewlI2adhR/h3kolkoCQTm1msD/1BuqVTKuO09ELsS++A==
+
+collect.js@^4.34.3:
+  version "4.34.3"
+  resolved "https://registry.yarnpkg.com/collect.js/-/collect.js-4.34.3.tgz#8169aff62d18a973b2ea23ace76da03517463ac1"
+  integrity sha512-aFr67xDazPwthsGm729mnClgNuh15JEagU6McKBKqxuHOkWL7vMFzGbhsXDdPZ+H6ia5QKIMGYuGOMENBHnVpg==
 
 color-convert@^2.0.1:
   version "2.0.1"
