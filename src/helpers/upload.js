@@ -9,9 +9,6 @@ const getOrCreateObjectUrl = file => {
   return objurl;
 }
 
-
-
-
 export const init = (editor) => {
   const am = editor.AssetManager;
   const promises = [];
@@ -57,6 +54,7 @@ export default () => {
       
         for (const file of files) {
             console.log("UPLOAD FILE HERE", file)
+
           // For each file a reader (to read the base64 URL)
           // and a promise (to track and merge results and errors)
           const promise = new Promise((resolve, reject) => {

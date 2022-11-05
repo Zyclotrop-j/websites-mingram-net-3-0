@@ -1,9 +1,16 @@
 import 'grapesjs/dist/css/grapes.min.css';
+import 'uppy/dist/uppy.min.css';
+import "toastify-js/src/toastify.css";
 import './editor.scss';
+
 import grapesjs from 'grapesjs';
+import Toastify from 'toastify-js';
+import swal from 'sweetalert';
 
 //import "grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.css";
 //import grapesjswebpackpreset from 'grapesjs-preset-webpage';
+
+import database from './database/database';
 
 import upload, { init as initAssets } from './helpers/upload';
 import privateClass from './helpers/privateClass';
@@ -21,18 +28,28 @@ import blocks from './blocks/index';
 import commands from './commands/index';
 
 import blockManager from './blockmanager/blockmanager';
+import assetManager from './assetmanager/assetmanager';
+import pagemanager from './pagemanager/pagemanager';
 
 const div = document.createElement("div");
 const editor = grapesjs.init({
     container : div,
+    storageManager: {
+        type: 'pouchdb',
+        options: {
+            session: { key: 'documents' }
+        }
+    },
     canvas: {
-        scripts: ['/website.js'], // anything from a style-framework 
+        scripts: [{ src: '/website.js', type: 'module', async: true, defer: true }], // anything from a style-framework 
         styles: ['/layer.css'],
     },
     styleManager: {
         sectors: [],
     },
+    pageManager: true,
     assetManager: {
+        custom: true,
         uploadFile: upload({
             get editor() {
                 return editor;
@@ -43,6 +60,7 @@ const editor = grapesjs.init({
         // componentFirst: true, // we mark 'private' classes as private instead
     },
     plugins: privateClass([
+        database,
         iconTrait,
         classSelectTrait,
         coordinateTrait,
@@ -76,5 +94,23 @@ const editor = grapesjs.init({
 });
 
 document.body.appendChild(div);
-document.body.appendChild(blockManager(editor));
+blockManager(editor);
+assetManager(editor);
+pagemanager(editor, {
+    toast: ({text, id}) => Toastify({
+        text: text,
+        duration: 2000,
+        close: true,
+        gravity: "top", 
+        position: "left",
+        stopOnFocus: true,
+        backgroundColor: id === "PATH_INVALID_CHAR" ? "hsl(44, 100%, 47%)" : 'white',
+    }).showToast(),
+    prompt: ({ id, title, text }) => swal({
+        title,
+        text,
+        buttons: true,
+        dangerMode: id === 'DELETE_PAGE',
+    }),
+});
 

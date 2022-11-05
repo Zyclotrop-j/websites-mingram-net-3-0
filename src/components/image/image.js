@@ -33,7 +33,7 @@ export default editor => {
                     }
                 }, 200);
             }
-            scheudle();
+            //scheudle();
         }
 
         get defaults() {
@@ -80,9 +80,24 @@ export default editor => {
             }
         }
     }
+    class View extends view {
+        init(...args) {
+            super.init(...args);
+            this.listenTo(this.model, 'change:src', () => {
+                // grapejs applies an "empty class" which messes with our styles -> remove it!
+                this.$el.removeClass(`gjs-plh-image`);
+            });
+        }
+        render(...args) {
+            const r = super.render(...args);
+            // grapejs applies an "empty class" which messes with our styles -> remove it!
+            this.$el.removeClass(`gjs-plh-image`);
+            return r;
+        }
+    }
     editor.Components.addType(type, {
         model: Image,
-        view: view
+        view: View
     });
     const existingSelector = editor.Selectors.getAll().findWhere({
         type: 1,

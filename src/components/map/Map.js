@@ -1,5 +1,5 @@
-import L from "leaflet";
 import debounce from "lodash.debounce";
+import { invalid_attribute_name_character } from "svelte/internal";
 import { roundToDigits } from "../../helpers/roundToDigits";
 
 const Map = class extends HTMLElement {
@@ -99,25 +99,29 @@ const Map = class extends HTMLElement {
     root.appendChild(div3);
     shadow.appendChild(style);
     shadow.appendChild(link);
-    const map = L.map(div2, {}).setView([-27.4498, -232.9102], this.zoom || 3);
-    map.attributionControl.setPrefix('Leaflet');
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 20,
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
-    this.leafletmap = map;
+    let invalidate = () => null;
     this.resizeObserver = new ResizeObserver(debounce(() => 
-      map.invalidateSize()
-    ), 500);
-    this.resizeObserver.observe(root);
-    this.render(map);
-    const processChange = () => {
-      const { lat, lng } = map.getCenter();
-      this.coordinate = JSON.stringify([roundToDigits(lat, 4), roundToDigits(lng, 4)]);
-      this.zoom = this.leafletmap.getZoom();
-    };
-    map.addEventListener('moveend', processChange);
-    map.addEventListener('zoomend', processChange);
+        invalidate()
+      ), 500);
+    import("leaflet").then(({default: L}) => {
+      const map = L.map(div2, {}).setView([-27.4498, -232.9102], this.zoom || 3);
+      map.attributionControl.setPrefix('Leaflet');
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 20,
+          attribution: '© OpenStreetMap'
+      }).addTo(map);
+      this.leafletmap = map;
+      invalidate = () => map.invalidateSize();
+      this.resizeObserver.observe(root);
+      this.render(map);
+      const processChange = () => {
+        const { lat, lng } = map.getCenter();
+        this.coordinate = JSON.stringify([roundToDigits(lat, 4), roundToDigits(lng, 4)]);
+        this.zoom = this.leafletmap.getZoom();
+      };
+      map.addEventListener('moveend', processChange);
+      map.addEventListener('zoomend', processChange);
+    });
   }
 
   centerOnSelf() {

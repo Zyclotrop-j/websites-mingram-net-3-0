@@ -139,8 +139,15 @@ https://www.npmjs.com/package/grapesjs-style-bg
 https://github.com/fireship-io/flamethrower / https://swup.js.org / https://barba.js.org
 
 
+https://rxdb.info/
+https://github.com/nk-o/jarallax#import-jarallax
+https://github.com/shuding/cobe
+https://atroposjs.com/docs
+https://www.vantajs.com/?effect=clouds 
+https://github.com/imgix/drift
+https://github.com/pchen66/panolens.js
 
 
-
-
+https://apicase.github.io/quick-start.html
+https://www.pomerium.com/docs
 

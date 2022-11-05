@@ -70,3 +70,53 @@
 .gjs-block svg rect {
     transition: fill 0.5s;
 }
+.customassetmanager {
+    display: flex;
+    gap: 2em;
+}
+.customassetmanager .statusbar {
+    position: absolute;
+    top: 0;
+    right: 5rem;
+}
+.customassetmanager .statusbar .uppy-StatusBar {
+    background: transparent;
+}
+.customassetmanager .statusbar .uppy-StatusBar-content {
+    padding-right: 4rem;
+    color: currentColor;
+}
+label.background-animation-input-group:not(:first-child), div.background-animation-input-group:not(:first-child) {
+    border-top: 1px solid #ababab;
+    display: flex;
+    align-items: center;
+}
+.background-animation-input-group [type=checkbox] {
+    appearance: auto;
+}
+[type=none] > .background-animation-input-group:not(:first-child) {
+    display: none;
+}
+.modal {
+    display: none;
+}
+.modal.is-open {
+    display: block;
+}
+.screenshot {
+    position: relative;
+}
+.screenshot > canvas {
+    transform: scale(0.083);
+    transform-origin: top left;
+}
+.previewframe {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -999;
+    visibility: hidden;
+}
+.filemanager-modal-wrt > .gjs-mdl-dialog {
+    max-width: 80vw;
+}

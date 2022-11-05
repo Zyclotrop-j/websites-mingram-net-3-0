@@ -1,6 +1,18 @@
+import swal from 'sweetalert';
+
 export default (editor) => {
     const { Commands } = editor;
-    Commands.add('canvas-clear', e => confirm('Are you sure to clear the canvas?') && e.runCommand('core:canvas-clear'));
+    Commands.add('canvas-clear', e => swal({
+        title: "Are you sure to clear the canvas?",
+        text: `Once cleared, there is no way to get back your process!`,
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+            e.runCommand('core:canvas-clear');
+        }
+    }));
 
     const panelManager = editor.Panels;
 
