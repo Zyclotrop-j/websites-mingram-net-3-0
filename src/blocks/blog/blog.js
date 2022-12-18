@@ -30,7 +30,7 @@ export default [
           </c-card-content>
           <c-card-footer class="card-footer" id="issp1">
             <c-card-footer-item class="card-footer-item" id="ip1s1">
-              <a class="" data-type="block" href="#" title="" target="self" rel="" id="ix80m"><span id="iadlw">Learn more<br/></span><icon-l id="i7am5" icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)">
+              <a class="" data-type="block" href="#" title="" target="self" rel="" id="ix80m" data-force="inline"><span id="iadlw">Learn more<br/></span><icon-l id="i7am5" icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                   <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                   </path>
@@ -77,7 +77,7 @@ export default [
           </c-card-content>
           <c-card-footer class="card-footer" id="i5hpku">
             <c-card-footer-item class="card-footer-item" id="i8wo8">
-              <a class="" data-type="block" href="#" title="" target="self" rel=""><span id="igyl5">Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i41mx">
+              <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span id="igyl5">Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i41mx">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                   <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                   </path>
@@ -124,7 +124,7 @@ export default [
           </c-card-content>
           <c-card-footer class="card-footer" id="iw9xw">
             <c-card-footer-item class="card-footer-item" id="iveio">
-              <a class="" data-type="block" href="#" title="" target="self" rel=""><span id="i4xm4">Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="il7c5">
+              <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span id="i4xm4">Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="il7c5">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                   <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                   </path>
@@ -332,7 +332,7 @@ export default [
           </c-card-content>
           <c-card-footer class="card-footer" id="issp1">
             <c-card-footer-item class="card-footer-item" id="ip1s1">
-              <a class="" data-type="block" href="#" title="" target="self" rel="" id="ix80m"><span id="iadlw">Learn more<br/></span><icon-l id="i7am5" icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)">
+              <a class="" data-type="block" href="#" title="" target="self" rel="" id="ix80m" data-force="inline"><span id="iadlw">Learn more<br/></span><icon-l id="i7am5" icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                   <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                   </path>
@@ -380,7 +380,7 @@ export default [
           </c-card-content>
           <c-card-footer class="card-footer" id="imh9s">
             <c-card-footer-item class="card-footer-item" id="i9d4m">
-              <a class="" data-type="block" href="#" title="" target="self" rel=""><span>Learn more<br/></span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="iyjbc">
+              <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span>Learn more<br/></span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="iyjbc">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                   <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                   </path>
@@ -428,7 +428,7 @@ export default [
           </c-card-content>
           <c-card-footer class="card-footer" id="iylgg">
             <c-card-footer-item class="card-footer-item" id="ibxsx">
-              <a class="" data-type="block" href="#" title="" target="self" rel=""><span>Learn more<br/></span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="ieg5i">
+              <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span>Learn more<br/></span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="ieg5i">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                   <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                   </path>
@@ -678,7 +678,7 @@ export default [
               </p>
               <sidebar-l side="right" id="ivdynu" sidewidth="var(--max)" contentmin="50%" space="var(--O-0)">
                 <box-l id="itnqp">
-                  <a class="" data-type="block" href="#" title="" target="self" rel="" id="id4ytj"><span id="i35qih">Learn more<br/></span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="iqqy3j">
+                  <a class="" data-type="block" href="#" title="" target="self" rel="" id="id4ytj" data-force="inline"><span id="i35qih">Learn more<br/></span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="iqqy3j">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                       <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                       </path>
@@ -733,7 +733,7 @@ export default [
               </p>
               <sidebar-l side="right" sidewidth="var(--max)" contentmin="50%" space="var(--O-0)">
                 <box-l id="ijcl4">
-                  <a class="" data-type="block" href="#" title="" target="self" rel=""><span>Learn more<br/></span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="inro3">
+                  <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span>Learn more<br/></span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="inro3">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                       <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                       </path>
@@ -954,7 +954,7 @@ export default [
             </c-card-content>
             <c-card-footer class="card-footer" id="i5hpku">
               <c-card-footer-item class="card-footer-item" id="i8wo8">
-                <a class="" data-type="block" href="#" title="" target="self" rel=""><span id="igyl5">Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i41mx">
+                <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span id="igyl5">Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i41mx">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                     <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                     </path>
@@ -989,7 +989,7 @@ export default [
             </c-card-content>
             <c-card-footer class="card-footer" id="i58myh">
               <c-card-footer-item class="card-footer-item" id="iqdafe">
-                <a class="" data-type="block" href="#" title="" target="self" rel=""><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="ielcr4">
+                <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="ielcr4">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                     <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                     </path>
@@ -1024,7 +1024,7 @@ export default [
             </c-card-content>
             <c-card-footer class="card-footer" id="i1ar4u">
               <c-card-footer-item class="card-footer-item" id="itgq2l">
-                <a class="" data-type="block" href="#" title="" target="self" rel=""><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="iclc41">
+                <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="iclc41">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                     <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                     </path>
@@ -1177,11 +1177,12 @@ export default [
               <p class="content" name="default-name" id="iystj">
                 <span id="ijmln">Jul<br/></span>
               </p>
-              <div data-spacer="vertical" id="ialas"></div>
+              <div data-spacer="vertical" id="ialas">
+                <span data-spacer="horizontal" id="izwz5c"></span>
+              </div>
               <p class="content" name="default-name" id="i0k4x">
                 <span id="iyrvk">18<br/></span>
               </p>
-              <span data-spacer="horizontal" id="izwz5c"></span>
             </box-l>
             <box-l id="it5y">
               <span class="tag not-round is-white is-normal not-light" name="default-name" id="ihyfk"><span id="ittxi">CATEGORY</span></span>
@@ -1209,11 +1210,12 @@ export default [
               <p class="content" name="default-name" id="i6b4f">
                 <span>Jul<br/></span>
               </p>
-              <div data-spacer="vertical" id="ignp5"></div>
+              <div data-spacer="vertical" id="ignp5">
+                <span data-spacer="horizontal" id="i11sl"></span>
+              </div>
               <p class="content" name="default-name" id="iktyh">
                 <span>18<br/></span>
               </p>
-              <span data-spacer="horizontal" id="i11sl"></span>
             </box-l>
             <box-l id="i0sfc">
               <span class="tag not-round is-white is-normal not-light" name="default-name" id="im0wz"><span id="idldo">CATEGORY</span></span>
@@ -1241,11 +1243,12 @@ export default [
               <p class="content" name="default-name" id="ideu9">
                 <span>Jul<br/></span>
               </p>
-              <div data-spacer="vertical" id="illij"></div>
+              <div data-spacer="vertical" id="illij">
+                <span data-spacer="horizontal" id="iqftp"></span>
+              </div>
               <p class="content" name="default-name" id="iwzz5">
                 <span>18<br/></span>
               </p>
-              <span data-spacer="horizontal" id="iqftp"></span>
             </box-l>
             <box-l id="ikj0l">
               <span class="tag not-round is-white is-normal not-light" name="default-name" id="ijrzv"><span id="iitdv">CATEGORY</span></span>

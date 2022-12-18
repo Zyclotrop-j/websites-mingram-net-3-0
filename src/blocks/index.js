@@ -15,6 +15,7 @@ import map from './components/map';
 import form from './components/form';
 import contact from './contact/contact';
 import content from './content/content';
+import parts from './parts/index.js';
 
 export default [
     ...grid12,
@@ -34,4 +35,5 @@ export default [
     ...form,
     ...contact,
     ...content,
+    ...parts,
 ];

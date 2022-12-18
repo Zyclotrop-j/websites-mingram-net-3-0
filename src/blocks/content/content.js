@@ -1,6 +1,8 @@
 import content4 from './content-4.svg';
 import content4image from './content-4-image.svg';
 import content6icon from './content-6-icon.svg';
+import contentlinklist from './content-linklist.svg';
+import contenttext from './content-text.svg';
 
 export default [
     {
@@ -38,7 +40,7 @@ export default [
             </c-card-content>
             <c-card-footer class="card-footer" id="i5s4np">
               <c-card-footer-item class="card-footer-item" id="iyzb18">
-                <a class="" data-type="block" href="#" title="" target="self" rel=""><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i0j4iu">
+                <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i0j4iu">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                     <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                     </path>
@@ -62,7 +64,7 @@ export default [
             </c-card-content>
             <c-card-footer class="card-footer" id="imqpa">
               <c-card-footer-item class="card-footer-item" id="icbze">
-                <a class="" data-type="block" href="#" title="" target="self" rel=""><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i3u1w">
+                <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i3u1w">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                     <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                     </path>
@@ -86,7 +88,7 @@ export default [
             </c-card-content>
             <c-card-footer class="card-footer" id="isob5">
               <c-card-footer-item class="card-footer-item" id="ioxj9">
-                <a class="" data-type="block" href="#" title="" target="self" rel=""><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="id1it">
+                <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="id1it">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                     <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                     </path>
@@ -110,7 +112,7 @@ export default [
             </c-card-content>
             <c-card-footer class="card-footer" id="i1dwlf">
               <c-card-footer-item class="card-footer-item" id="ikt20h">
-                <a class="" data-type="block" href="#" title="" target="self" rel=""><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i2qgyy">
+                <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline"><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i2qgyy">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
                     <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
                     </path>
@@ -756,7 +758,6 @@ export default [
       category: 'Content',
       kind: 'Section'
     },
-
     {
       id: 'content-6-icon',
       label: `<figure style="margin: 5px;" class="w100">
@@ -964,71 +965,6 @@ export default [
       border-bottom-style:solid;
       border-top-right-radius:var(--L2);
       border-bottom-right-radius:var(--L2);
-    }
-    grid-item[data-width="1"]{
-      --w: 1;
-    }
-    grid-item[data-width="2"]{
-      --w: 2;
-    }
-    grid-item[data-width="3"]{
-      --w: 3;
-    }
-    grid-item[data-width="4"]{
-      --w: 4;
-    }
-    grid-item[data-width="5"]{
-      --w: 5;
-    }
-    grid-item[data-width="6"]{
-      --w: 6;
-    }
-    grid-item[data-width="7"]{
-      --w: 7;
-    }
-    grid-item[data-width="8"]{
-      --w: 8;
-    }
-    grid-item[data-width="9"]{
-      --w: 9;
-    }
-    grid-item[data-width="10"]{
-      --w: 10;
-    }
-    grid-item[data-width="11"]{
-      --w: 11;
-    }
-    grid-item[data-width="12"]{
-      --w: 12;
-    }
-    grid-item[data-width="auto"]{
-      flex-grow:1;
-    }
-    grid-item{
-      display:inline;
-      flex-grow:var(--wg, var(--w));
-      max-width:calc( 100% / 12 * var(--wg, var(--w)) );
-    }
-    grid-12{
-      display:flex;
-      flex-wrap:wrap;
-    }
-    [data-mode="block"]{
-      display:block;
-    }
-    [data-mode="flex"]{
-      display:flex;
-    }
-    [data-spacer="horizontal"]{
-      --w: 8%;
-      --c: currentColor;
-      display:inline-block;
-      height:1em;
-      min-height:5px;
-      margin-top:0px;
-      margin-right:0px;
-      margin-bottom:0px;
-      margin-left:0px;
     }
     #iiy4a{
       color:var(--primary);
@@ -1345,6 +1281,200 @@ export default [
         margin-right:auto;
       }
     }    
+    </style>`,
+      category: 'Content',
+      kind: 'Section'
+    },
+    {
+      id: 'content-linklist',
+      label: `<figure style="margin: 5px;" class="w100">
+          ${contentlinklist}
+      <figcaption>Content with links</figcaption></figure>`,
+      content: `<box-l-section data-gjs-custom-name="Linklist content" padding="var(--s1)" id="i4oo" background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scaleMobile="">
+      <sidebar-l sidewidth="var(--lg)" contentmin="35%" side="right" nostretch="" id="ip3d" space="var(--O-0)">
+        <box-l id="iks2" style="border-color: var(--background);" background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scaleMobile="">
+          <h1 class="is-2 title" name="default-name" id="i7zrh">
+            <span id="i6wil">Pitchfork Kickstarter Taxidermy</span>
+          </h1>
+          <p class="content" name="default-name" id="i969">
+            <span id="ismd">Locavore cardigan small batch roof party blue bottle blog meggings sartorial jean shorts kickstarter migas sriracha church-key synth succulents. Actually taiyaki neutra, distillery gastropub pok pok ugh.</span>
+          </p>
+          <a class="" data-type="block" href="#" title="" target="self" rel="" id="it67i"><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i0j4iu">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" preserveAspectRatio="xMidYMid meet" viewBox="0 0 15 15" class="icon">
+              <path fill="currentColor" d="M8.293 2.293a1 1 0 0 1 1.414 0l4.5 4.5a1 1 0 0 1 0 1.414l-4.5 4.5a1 1 0 0 1-1.414-1.414L11 8.5H1.5a1 1 0 0 1 0-2H11L8.293 3.707a1 1 0 0 1 0-1.414Z">
+              </path>
+            </svg>
+            </icon-l></a>
+        </box-l>
+        <box-l id="i7dbe" background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scaleMobile="">
+          <span class="tag not-light is-white is-normal not-round" name="default-name" id="iuj3c"><span id="igtde">Categories</span></span>
+          <grid-12 class="" name="default-name" id="ieqpi" data-mode="keep">
+            <grid-item name="default-name" data-width="4" id="i6247" data-mode="none">
+              <a class="" data-type="inline" href="#" title="" target="self" rel="" id="iqicv">First Link</a>
+            </grid-item>
+            <grid-item class="" name="default-name" data-width="4" data-mode="none" id="ikcek">
+              <a class="" data-type="inline" href="#" title="" target="self" rel="" id="i11t8">Second Link</a>
+            </grid-item>
+            <grid-item class="" name="default-name" data-width="4" data-mode="none" id="idb09">
+              <a class="" data-type="inline" href="#" title="" target="self" rel="" id="isb6e">Third Link</a>
+            </grid-item>
+            <grid-item class="" name="default-name" data-width="4" data-mode="none" id="isl5s">
+              <a class="" data-type="inline" href="#" title="" target="self" rel="" id="iqyld">Fourth Link</a>
+            </grid-item>
+            <grid-item class="" name="default-name" data-width="4" data-mode="none" id="i8pp3">
+              <a class="" data-type="inline" href="#" title="" target="self" rel="" id="ijwzc">Fifth Link</a>
+            </grid-item>
+            <grid-item class="" name="default-name" data-width="4" data-mode="none" id="ipc57">
+              <a class="" data-type="inline" href="#" title="" target="self" rel="" id="igxgi">Sixth Link</a>
+            </grid-item>
+            <grid-item class="" name="default-name" data-width="4" data-mode="none" id="izgaz">
+              <a class="" data-type="inline" href="#" title="" target="self" rel="" id="i954v">Seventh Link</a>
+            </grid-item>
+            <grid-item class="" name="default-name" data-width="4" data-mode="none" id="icaer">
+              <a class="" data-type="inline" href="#" title="" target="self" rel="" id="if7bi">Eighth Link</a>
+            </grid-item>
+          </grid-12>
+        </box-l>
+      </sidebar-l>
+    </box-l-section><style>
+      #iks2{
+        border-color: var(--background);
+        border-right-width:var(--s-5);
+        border-right-style:solid;
+        margin-right:var(--L12);
+        padding-right:var(--L12);
+        margin-left:var(--O-0);
+        padding-left:var(--O-0);
+      }
+      #iuj3c{
+        text-transform:uppercase;
+        padding-left:var(--O-0);
+        padding-right:var(--O-0);
+        font-weight:600;
+        letter-spacing:0.05rem;
+      }
+      #i7dbe{
+        align-self:center;
+      }
+      #i969{
+        padding-left:var(--O-0);
+      }
+      @media (max-width: 992px){
+        #iks2{
+          margin-right:var(--O-0);
+          padding-right:var(--O-0);
+          border-right-width:var(--O-0);
+          border-bottom-width:var(--s-5);
+          border-right-style:none;
+          border-bottom-style:solid;
+          margin-bottom:var(--L10);
+          padding-bottom:var(--L10);
+        }
+      }
+      @media (max-width: 768px){
+        #iks2{
+          margin-bottom:var(--L6);
+          padding-bottom:var(--L6);
+        }
+        #icaer{
+          --wg:6;
+        }
+        #i6247{
+          --wg:6;
+        }
+        #ikcek{
+          --wg:6;
+        }
+        #idb09{
+          --wg:6;
+        }
+        #isl5s{
+          --wg:6;
+        }
+        #i8pp3{
+          --wg:6;
+        }
+        #ipc57{
+          --wg:6;
+        }
+        #izgaz{
+          --wg:6;
+        }
+      }
+      @media (max-width: 480px){
+        #iks2{
+          margin-bottom:var(--L4);
+          padding-bottom:var(--L4);
+        }
+        #i6247{
+          --wg:6;
+        }
+        #ikcek{
+          --wg:6;
+        }
+        #idb09{
+          --wg:6;
+        }
+        #isl5s{
+          --wg:6;
+        }
+        #i8pp3{
+          --wg:6;
+        }
+        #ipc57{
+          --wg:6;
+        }
+        #izgaz{
+          --wg:6;
+        }
+        #icaer{
+          --wg:6;
+        }
+      }
+    </style>`,
+      category: 'Content',
+      kind: 'Section'
+    },
+    {
+      id: 'content-text',
+      label: `<figure style="margin: 5px;" class="w100">
+          ${contenttext}
+      <figcaption>Content with text</figcaption></figure>`,
+      content: `<box-l-section data-gjs-custom-name="Text content" padding="var(--s1)" id="i4oo" background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scalemobile="" scaleMobile="">
+      <sidebar-l sidewidth="var(--n2xl)" contentmin="40%" side="left" nostretch="" id="ip3d" space="var(--O-0)">
+        <box-l background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scaleMobile="" id="i4m4r">
+          <h2 name="default-name" id="i7zrh" class="h-tag title is-3">
+            <span id="i6wil">Kickstarter Actually Pinterest Brunch Bitters Occupy</span>
+          </h2>
+        </box-l>
+        <box-l background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scaleMobile="" id="i11av">
+          <p class="content" name="default-name" id="i969">
+            <span id="ismd">Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe four dollar toast truffaut, direct trade kombucha brunch williamsburg keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos.</span>
+          </p>
+          <div class="buttons has-addons" id="iu0tq">
+            <button name="default-name" id="i70lz" class="button is-normal wide is-primary"><span id="iiwgf">Button</span></button>
+          </div>
+          <a class="" data-type="block" href="#" title="" target="self" rel="" id="it67i"><span id="iiayb">Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i0j4iu"></icon-l></a>
+        </box-l>
+      </sidebar-l>
+    </box-l-section><style>
+    #i969{
+      padding-left:var(--O-0);
+    }
+    #iu0tq{
+      margin-right:var(--L4);
+      margin-bottom:var(--O-0);
+    }
+    @media (max-width: 992px){
+      #i7zrh{
+        margin-bottom:var(--O-0);
+      }
+    }
+    @media (max-width: 480px){
+      #i7zrh{
+        font-size:1.8rem;
+      }
+    }
     </style>`,
       category: 'Content',
       kind: 'Section'

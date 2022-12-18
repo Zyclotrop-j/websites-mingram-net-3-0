@@ -91,6 +91,15 @@ export default editor => {
                         label: 'Type',
                         name: 'rel',
                     },
+                    {
+                        type: 'select',
+                        options: [
+                            { value: '', name: 'None' },
+                            { value: 'inline', name: 'Inline' },
+                        ],
+                        label: 'Force layout',
+                        name: 'data-force',
+                    },
                 ],
                 components: [
                   {

@@ -10,11 +10,17 @@ class Type extends HTMLElement {
     constructor() {
         super();
     }
+    connectedCallback() {
+        this.setAttribute("role", "list");
+    }
 }
 customElements.define(type, Type);
 class Item extends HTMLElement {
     constructor() {
         super();
+    }
+    connectedCallback() {
+        this.setAttribute("role", "listitem");
     }
     // support link here?
 }

@@ -165,6 +165,14 @@ export default editor => {
                   {
                     type: 'class_select',
                     options: [
+                        {value: '', name: 'none'},
+                        {value: 'wide', name: 'wide'},
+                    ],
+                    label: 'Wide variant'
+                  },
+                  {
+                    type: 'class_select',
+                    options: [
                         {value: 'is-small', name: 'small'},
                         {value: 'is-normal', name: 'normal'},
                         {value: 'is-medium', name: 'medium'},
@@ -280,7 +288,11 @@ export default editor => {
                   },
                 ],
                 styles: `
-                    
+                    .buttons .button.wide {
+                      padding-top: 0.1em;
+                      padding-bottom: 0.1em;
+                      height: auto;
+                    }
                 `,
                 updated() {
                   const effect = this.dataset.effect?.trim() || 'bounce';

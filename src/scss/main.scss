@@ -532,6 +532,9 @@ img[data-force-auto-width] {
 a[data-type=block] {
     display: inherit;
 }
+a[data-type=block][data-force=inline] {
+    display: inline-flex;
+}
 a[data-type=block] > span + icon-l {
     margin-left: var(--L3);
 }

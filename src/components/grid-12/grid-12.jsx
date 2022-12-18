@@ -65,6 +65,16 @@ export default editor => {
                 ],
                 traits: [
                   'name',
+                  {
+                    type: 'select',
+                    label: 'Width-mode',
+                    name: 'data-mode',
+                    options: [
+                      { id: 'none', name: 'Auto'},
+                      { id: 'flex', name: 'Relax'},
+                      { id: 'keep', name: 'Force width'}
+                    ]
+                  }
                 ],
                 components: [
                   {
@@ -216,6 +226,16 @@ export default editor => {
                     { id: 'auto', name: 'auto'},
                     ...Array.from({length: 12}).map((_, idx) => ({ id: `${idx+1}`, name: `Span ${idx+1}`}))
                   ]
+                },
+                {
+                  type: 'select',
+                  label: 'Width-mode',
+                  name: 'data-mode',
+                  options: [
+                    { id: 'none', name: 'Inherit'},
+                    { id: 'flex', name: 'Relax'},
+                    { id: 'keep', name: 'Force width'}
+                  ]
                 }
               ],
               components: [
@@ -241,6 +261,20 @@ export default editor => {
                   flex-grow: 1;
                 }
                 grid-item { display: inline; flex-grow: var(--wg, var(--w)); max-width: calc( 100% / 12 * var(--wg, var(--w)) ); }
+
+                grid-12 grid-item,
+                grid-12[data-mode=keep] grid-item,
+                grid-12 grid-item[data-mode=keep],
+                grid-12[data-mode=flex] grid-item[data-mode=keep],
+                grid-12[data-mode=keep] grid-item[data-mode=keep] {
+                  width: calc( 100% / 12 * var(--wg, var(--w)) );
+                }
+                grid-12 grid-item[data-mode=flex], 
+                grid-12[data-mode=flex] grid-item,
+                grid-12[data-mode=keep] grid-item[data-mode=flex], 
+                grid-12[data-mode=flex] grid-item[data-mode=flex] {
+                  width: auto;
+                }
               `,
             }
       },
