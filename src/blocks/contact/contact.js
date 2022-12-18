@@ -8,7 +8,7 @@ export default [
         label: `<figure style="margin: 5px;" class="w100">
             ${contactMapBackground}
         <figcaption>Contact map-bg</figcaption></figure>`,
-        content: `<map-l mode="lock" auto="none" coordinate="[-27.4498,-232.9102]" zoom="3">
+        content: `<map-l mode="lock" data-gjs-custom-name="Contact form (background map)" auto="none" coordinate="[-27.4498,-232.9102]" zoom="3">
         <box-l-section id="ib41">
           <grid-12 class="" name="default-name" id="ik1f">
             <grid-item class="" name="default-name" data-width="4" id="i29wv">
@@ -134,7 +134,7 @@ export default [
       label: `<figure style="margin: 5px;" class="w100">
           ${contactMap}
       <figcaption>Contact map</figcaption></figure>`,
-      content: `<box-l-section padding="0" id="i4oo-3">
+      content: `<box-l-section data-gjs-custom-name="Contact form with map" padding="0" id="i4oo-3">
       <sidebar-l contentmin="30%" side="right" sidewidth="var(--md)" space="var(--O-0)" id="im6gh">
         <map-l mode="lock" auto="height" coordinate="[-28.3044,-230.1855]" zoom="3" id="ij51">
           <box-l id="ib41">
@@ -406,7 +406,7 @@ export default [
       label: `<figure style="margin: 5px;" class="w100">
           ${contact}
       <figcaption>Contact form</figcaption></figure>`,
-      content: `<box-l-section padding="0" id="i4oo-3">
+      content: `<box-l-section data-gjs-custom-name="Contact form" padding="0" id="i4oo-3">
       <grid-12 class="" name="default-name" id="iojst">
         <grid-item class="" name="default-name" data-width="6" id="idxz7">
           <box-l id="iks2-3">

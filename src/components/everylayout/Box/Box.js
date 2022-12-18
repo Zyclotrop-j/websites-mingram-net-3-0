@@ -85,12 +85,6 @@ const Box = (ext) => class extends HTMLElement {
   }
 
   async renderVanta(div, slot) {
-    if(this.effect) {
-      this.effect.destroy();
-      while(div.firstChild) {
-        div.removeChild(div.firstChild);
-      }
-    }
     if(!this.shadowRoot) {
       this.attachShadow({ mode: "open" })
     }
@@ -98,10 +92,7 @@ const Box = (ext) => class extends HTMLElement {
       this.styleSheetElement = document.createElement("style");
       this.styleSheetElement.textContent = `
       ${Object.keys(effects).map(k => `:host([type=${k}])`).join(',')} {
-        position: relative
-      }
-      :host([type=none]) > div:first-child {
-        display: none;
+        position: relative;
       }
       div:first-child {
         position: absolute;
@@ -110,6 +101,10 @@ const Box = (ext) => class extends HTMLElement {
         bottom: 0;
         right: 0;
         overflow: hidden;
+        display: none;
+      }
+      ${Object.keys(effects).map(k => `:host([type=${k}]) div:first-child`).join(',')}  {
+        display: unset;
       }
       div > canvas {
         position: absolute !important;
@@ -247,7 +242,12 @@ const Box = (ext) => class extends HTMLElement {
       settings.scale = 1.00;
     if(this.getAttribute('scaleMobile'))
       settings.scaleMobile = 1.00;
-    
+    if(this.effect) {
+      this.effect.destroy();
+    }
+    while(div.firstChild) {
+      div.removeChild(div.firstChild);
+    }
     this.effect = vantaeffect.default({
       el: div,
       ...settings,

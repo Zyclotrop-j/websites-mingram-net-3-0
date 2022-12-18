@@ -61,7 +61,7 @@
     "esbuild-visualizer": "^0.3.1",
     "nodemon": "^2.0.19",
     "rimraf": "^3.0.2",
-    "serve": "^14.0.1",
+    "serve": "^14.1.2",
     "shx": "^0.3.4"
   }
 }

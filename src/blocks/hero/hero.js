@@ -8,7 +8,7 @@ export default [
         label: `<figure style="margin: 5px;" class="w100">
             ${heroRight}
         <figcaption>Hero right</figcaption></figure>`,
-        content: `<box-l-section padding="var(--s1)" id="i4oo">
+        content: `<box-l-section data-gjs-custom-name="Hero (image right)" padding="var(--s1)" id="i4oo">
             <sidebar-l sidewidth="var(--lg)" contentmin="35%" side="right" nostretch="" id="ip3d">
                 <box-l id="iks2" style="color:var(--light); align-self:center; margin-right:var(--L24);;">
                     <h1 class="is-2 title" name="default-name" id="i7zrh" style="margin-bottom:var(--L4);">
@@ -46,7 +46,7 @@ export default [
         label: `<figure style="margin: 5px;" class="w100">
             ${heroLeft}
         <figcaption>Hero left</figcaption></figure>`,
-        content: `<box-l-section padding="var(--s1)" id="i4oo-2">
+        content: `<box-l-section data-gjs-custom-name="Hero (image left)" padding="var(--s1)" id="i4oo-2">
             <sidebar-l sidewidth="var(--lg)" contentmin="35%" side="left" nostretch="" id="ip3d-2">
                 <img
                     style="width:512px; height:354px;"
@@ -85,7 +85,7 @@ export default [
         label: `<figure style="margin: 5px;" class="w100">
             ${heroCenter}
         <figcaption>Hero center</figcaption></figure>`,
-        content: `<box-l-section padding="0" id="i4oo-3" style="align-items:center; margin-left:var(--s1); margin-right:var(--s1); margin-bottom:var(--s1);">
+        content: `<box-l-section data-gjs-custom-name="Hero (image centered)" padding="0" id="i4oo-3" style="align-items:center; margin-left:var(--s1); margin-right:var(--s1); margin-bottom:var(--s1);">
             <box-l padding="0" id="i2gux" data-force-fullwidth>
                 <img style="height: 350px;" class="image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImZpbGw6IHJnYmEoMCwwLDAsMC4xNSk7IHRyYW5zZm9ybTogc2NhbGUoMC43NSkiPgogICAgICAgIDxwYXRoIGQ9Ik04LjUgMTMuNWwyLjUgMyAzLjUtNC41IDQuNSA2SDVtMTYgMVY1YTIgMiAwIDAgMC0yLTJINWMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMnoiPjwvcGF0aD4KICAgICAgPC9zdmc+" id="isdqj-3"/>
             </box-l>

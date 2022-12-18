@@ -146,7 +146,12 @@ export default editor => {
                 'text-align', 'line-height', 'letter-spacing',
                 //'word-spacing', 'text-overflow', 
                 //'white-space', 'word-break', 'hyphens', 'line-break', 'writing-mode', 'text-orientation', 'overflow-wrap'
-                'border',
+                
+                // border
+                'border-color',
+                'border-radius',
+                'border-width',
+                'border-style',
 
                 // Item
                 'order',
@@ -269,6 +274,13 @@ export default editor => {
     },
     view: {}
   });
+
+  const lock = model => model.get('components').each(model => {
+    model.set({
+      locked: true, editable: false, hoverable: false, selectable: false, highlightable: false, draggable: false, droppable: false, layerable: false,
+      propagate: ['locked', 'editable', 'hoverable', 'selectable', 'highlightable', 'draggable', 'droppable', 'layerable'] });
+  });
+
   editor.Components.addType(icon, {
     isComponent: el => el?.tagName?.toLowerCase() === iconelement,
     model: {
@@ -279,7 +291,17 @@ export default editor => {
             attributes: {
               class: 'card-header-icon',
             },
-            stylable: [],
+            stylable: [
+              'background-color',
+              'color',
+              'font-size',
+              
+              // border
+              'border-color',
+              'border-radius',
+              'border-width',
+              'border-style',
+            ],
             traits: ['label',
               {
                 type: 'icon_select',
@@ -294,31 +316,25 @@ export default editor => {
           },
           async updated() {
             const fname = this.getAttributes().icon;
+            lock(this);
             if(fname && this?.changed?.attributes?.icon && this?.changed?.attributes?.icon !== this.lastIcon) {
               this.lastIcon = this?.changed?.attributes?.icon;
               const domelement = this.view.el;
               const icondata = await memoFetch(fname);
               const model = this;
               model.components(`<span class="icon">${icondata}</span>`);
-              model.get('components').each(model => {
-                model.set({
-                  locked: true, editable: false, hoverable: false, selectable: false, highlightable: false, draggable: false, droppable: false,
-                  propagate: ['editable', 'locked', 'hoverable', 'selectable', 'highlightable', 'draggable', 'droppable'] });
-              });
+              lock(model);
             }
           },
     },
     view: {
       async onRender({model}) {
+        lock(model);
         const fname = model.getAttributes().icon || "icons/tabler-star.svg";
         const domelement = this.el;
         const icondata = await memoFetch(fname);
         model.components(`<span class="icon">${icondata}</span>`);
-        model.get('components').each(model => {
-          model.set({
-            locked: true, editable: false, hoverable: false, selectable: false, highlightable: false, draggable: false, droppable: false,
-            propagate: ['editable', 'locked', 'hoverable', 'selectable', 'highlightable', 'draggable', 'droppable'] });
-        });
+        lock(model);
       }
     }
   });

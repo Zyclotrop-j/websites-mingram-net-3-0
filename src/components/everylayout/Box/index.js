@@ -97,7 +97,7 @@ export default editor => {
           "scaleMobile",
         ].forEach(name => {
           const inputType = el.querySelector(`[name=${name}]`);
-          inputType.addEventListener('change', ev => {
+          inputType?.addEventListener('change', ev => {
             component.addAttributes({ [name]: ev.target.value });
           });
         });
@@ -128,6 +128,7 @@ export default editor => {
         ].forEach(name => {
           const attr = attrs[name] || '';
           const el = elInput.querySelector(`[name=${name}]`);
+          if(!el)return
           el.value = attr;
           el.dispatchEvent(new CustomEvent('change'));
         });

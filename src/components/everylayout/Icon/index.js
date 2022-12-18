@@ -94,8 +94,8 @@ export default editor => {
               model.components(icondata);
               model.get('components').each(model => {
                 model.set({
-                  locked: true, editable: false, hoverable: false, selectable: false, highlightable: false, draggable: false, droppable: false,
-                  propagate: ['editable', 'locked', 'hoverable', 'selectable', 'highlightable', 'draggable', 'droppable'] });
+                  locked: true, editable: false, hoverable: false, selectable: false, highlightable: false, draggable: false, droppable: false, layerable: false,
+                  propagate: ['editable', 'locked', 'hoverable', 'selectable', 'highlightable', 'draggable', 'droppable', 'layerable'] });
               });
             }
           }

@@ -52,3 +52,22 @@ c-card-footer-item:not(:first-child) > button.button:only-child, c-card-footer-i
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
 }
+c-card-header-icon {
+    font-size: 3em;
+}
+c-card-header-icon > .icon.icon {
+    height: 0.75em;
+    height: 1cap;
+    width: 0.75em;
+    width: 1cap;
+}
+c-card-header-icon > .icon.icon > svg {
+    height: 1em;
+    width: 1em;
+}
+c-card-header-icon.card-header-icon {
+    padding-top: clamp(0.1rem, 0.3em, 0.75rem);
+    padding-right: clamp(0.1rem, 0.3em, 0.75rem);
+    padding-bottom: clamp(0.1rem, 0.3em, 0.75rem);
+    padding-left: clamp(0.1rem, 0.3em, 0.75rem);
+}

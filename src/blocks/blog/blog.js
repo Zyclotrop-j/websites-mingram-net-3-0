@@ -10,7 +10,7 @@ export default [
         label: `<figure style="margin: 5px;" class="w100">
             ${pictureBlog}
         <figcaption>Picture Blog</figcaption></figure>`,
-        content: `<box-l-section padding="var(--s1)"><grid-l min="var(--sm)" space="var(--s2)" id="ietu">
+        content: `<box-l-section data-gjs-custom-name="Picture blog" padding="var(--s1)"><grid-l min="var(--sm)" space="var(--s2)" id="ietu">
         <c-card class="card" id="ikqg">
           <c-card-image class="card-image" id="i59rx">
             <img class="image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImZpbGw6IHJnYmEoMCwwLDAsMC4xNSk7IHRyYW5zZm9ybTogc2NhbGUoMC43NSkiPgogICAgICAgIDxwYXRoIGQ9Ik04LjUgMTMuNWwyLjUgMyAzLjUtNC41IDQuNSA2SDVtMTYgMVY1YTIgMiAwIDAgMC0yLTJINWMtMS4xIDAtMiAuOS0yIDJ2MTRjMCAxLjEuOSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMnoiPjwvcGF0aD4KICAgICAgPC9zdmc+" id="i2xi"/>
@@ -313,7 +313,7 @@ export default [
         label: `<figure style="margin: 5px;" class="w100">
             ${cardBlog}
         <figcaption>Card blog</figcaption></figure>`,
-        content: `<box-l-section padding="var(--s1)"><grid-l min="var(--sm)" space="var(--s2)" id="ietu">
+        content: `<box-l-section data-gjs-custom-name="Card blog" padding="var(--s1)"><grid-l min="var(--sm)" space="var(--s2)" id="ietu">
         <c-card class="card" id="ikqg">
           <c-card-image class="card-image" id="i59rx">
           </c-card-image>
@@ -666,7 +666,7 @@ export default [
       label: `<figure style="margin: 5px;" class="w100">
           ${contentBlog}
       <figcaption>Content blog</figcaption></figure>`,
-      content: `<box-l-section padding="var(--s1)" id="ikge">
+      content: `<box-l-section data-gjs-custom-name="Content blog" padding="var(--s1)" id="ikge">
           <grid-l space="var(--s0)" min="var(--lg)" id="ioy7">
             <box-l id="it5y">
               <span class="tag is-default-size not-light not-round is-primary" name="default-name" id="imlxfd"><span>CATEGORY</span></span>
@@ -929,7 +929,7 @@ export default [
       label: `<figure style="margin: 5px;" class="w100">
           ${timelineBlog}
       <figcaption>Timeline blog</figcaption></figure>`,
-      content: `<box-l-section padding="0" id="i4oo-3">
+      content: `<box-l-section data-gjs-custom-name="Timline blog" padding="0" id="i4oo-3">
       <div data-spacer="vertical" id="i5lhyy"></div>
       <sidebar-l side="left" sidewidth="var(--n3xs)" contentmin="60%" space="var(--s0)" id="ihye">
         <box-l padding="0" id="ik9u">
@@ -1170,7 +1170,7 @@ export default [
       label: `<figure style="margin: 5px;" class="w100">
           ${datesBlog}
       <figcaption>Blog dates</figcaption></figure>`,
-      content: `<box-l-section padding="var(--s1)" id="ikge">
+      content: `<box-l-section data-gjs-custom-name="Blog with dates" padding="var(--s1)" id="ikge">
         <grid-l space="var(--L8)" min="var(--md)" id="ioy7">
           <sidebar-l sidewidth="var(--L6)" contentmin="80%" space="var(--O-0)" id="isl2o">
             <box-l id="i3znx">

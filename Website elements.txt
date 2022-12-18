@@ -151,3 +151,9 @@ https://github.com/pchen66/panolens.js
 https://apicase.github.io/quick-start.html
 https://www.pomerium.com/docs
 
+SEAM CARVER
+https://github.com/trekhleb/js-image-carver
+https://github.com/andrewdcampbell/seam-carving
+https://github.com/mfbx9da4/seam-carving-js
+https://github.com/yanglinz/rust-wasm-seam-carving
+

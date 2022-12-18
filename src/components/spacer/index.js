@@ -10,7 +10,7 @@ editor.Components.addType(typevertical, {
         defaults: {
             tagName: 'hr',
             draggable: draggable(`*`),
-            droppable: false,
+            droppable: "[data-spacer=horizontal]",
             attributes: {
               'data-spacer': 'vertical',
             },
