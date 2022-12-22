@@ -7,8 +7,10 @@ const modifyPluginArg = plugin => (editor, ...args) => {
         trait.options.flatMap(opt => opt.value.split(' '))
     ).filter(i => i?.trim?.()) ?? [];
     const fn3 = arg => arg?.model?.defaults?.privateClass ?? [];
+    const fn4 = arg => arg?.privateClass ?? [];
     const addType = (name, obj) => {
-        const classes = [...fn3(obj), ...fn2(obj), ...fn(obj)].filter((i, idx, arr) => i && arr.indexOf(i) === idx);
+        const classes = [...fn4(obj), ...fn3(obj), ...fn2(obj), ...fn(obj)].filter((i, idx, arr) => i && arr.indexOf(i) === idx);
+        delete obj.privateClass;
         const c = editor.Components.addType(name, obj);
         classes.forEach(className => {
             const getSelectors = () => editor.Selectors.getAll().where({

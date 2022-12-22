@@ -160,13 +160,20 @@
         min-width: 300px;
     }
     .asset-img {
-        max-width: 100%;
         display: block;
+        object-fit: cover;
+        height: 100%;
+        aspect-ratio: 1.5;
+        margin-left: auto;
+        margin-right: auto;
+        transition: width 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    }
+    .asset:hover .asset-img, .asset:focus-within .asset-img {
+        object-fit: contain;
     }
     .asset {
-        width: 16.66%;
         height: 90px;
-        overflow: hidden;
         border-radius: 5px;
         margin-bottom: 20px;
         cursor: pointer;

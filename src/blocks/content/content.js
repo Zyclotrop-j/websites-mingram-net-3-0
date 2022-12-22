@@ -3,6 +3,7 @@ import content4image from './content-4-image.svg';
 import content6icon from './content-6-icon.svg';
 import contentlinklist from './content-linklist.svg';
 import contenttext from './content-text.svg';
+import contentintroduction from './content-introduction.svg';
 
 export default [
     {
@@ -1479,6 +1480,156 @@ export default [
       category: 'Content',
       kind: 'Section'
     },
+    {
+      id: 'content-introduction',
+      label: `<figure style="margin: 5px;" class="w100">
+          ${contentintroduction}
+      <figcaption>Content with introduction</figcaption></figure>`,
+      content: `<box-l-section padding="var(--s1)" id="i4oo" background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scalemobile="" scaleMobile="">
+      <img class="image" src="https://via.placeholder.com/1200" id="in9yk"/>
+      <sidebar-l sidewidth="var(--n2xs)" contentmin="50%" side="left" nostretch="" id="ip3d" space="var(--O-0)">
+        <c-card class="card" id="i1b45">
+          <c-card-image class="card-image" id="ivruy">
+            <img class="image round" src="https://via.placeholder.com/150" id="izeij"/>
+          </c-card-image>
+          <c-card-header class="card-header" id="iyjuk">
+            <c-card-header-title id="igozx" class="card-header-title is-centered">
+              <h2 class="is-2 h-tag" name="default-name">
+                <span id="iacwg">Phoebe Caulfield</span>
+              </h2>
+            </c-card-header-title>
+          </c-card-header>
+          <c-card-content class="card-content" id="invyt">
+            <div data-spacer="vertical" id="iwbai-2">
+              <span data-spacer="horizontal" id="i0j8i-2"></span>
+            </div>
+          </c-card-content>
+          <c-card-content class="card-content" id="ihzfw">
+            <span id="isfur">Raclette knausgaard hella meggs normcore williamsburg enamel pin sartorial venmo tbh hot chicken gentrify portland.</span>
+          </c-card-content>
+        </c-card>
+        <box-l id="i7dbe" background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scalemobile="" scaleMobile="">
+          <box-l background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scaleMobile="" id="i10a8" padding="0">
+            <p class="content" name="default-name" id="iq462">
+              <span id="ip81i">Meggings portland fingerstache lyft, post-ironic fixie man bun banh mi umami everyday carry hexagon locavore direct trade art party. Locavore small batch listicle gastropub farm-to-table lumbersexual salvia messenger bag. Coloring book flannel truffaut craft beer drinking vinegar sartorial, disrupt fashion axe normcore meh butcher. Portland 90&#039;s scenester vexillologist forage post-ironic asymmetrical, chartreuse disrupt butcher paleo intelligentsia pabst before they sold out four loko. 3 wolf moon brooklyn.</span>
+            </p>
+          </box-l>
+          <a class="" data-type="block" href="#" title="" target="self" rel="" id="it67i" data-force=""><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i0j4iu">
+            </icon-l></a>
+        </box-l>
+      </sidebar-l>
+    </box-l-section><style>
+    #i7dbe{
+      align-self:center;
+      padding-left:var(--L8);
+    }
+    #in9yk{
+      width:100%;
+      object-fit:cover;
+      height:250px;
+    }
+    #ip3d{
+      margin-top:var(--L10);
+    }
+    #ihzfw{
+      text-align:center;
+      font-size:0.9em;
+    }
+    #i4oo{
+      margin-left:auto;
+      margin-right:auto;
+      max-width:var(--container-lg);
+    }
+    #i1b45{
+      border-color:var(--background);
+      border-right-width:var(--s-5);
+      border-right-style:solid;
+      border-top-left-radius:var(--O-0);
+      border-top-right-radius:var(--O-0);
+      border-bottom-right-radius:var(--O-0);
+      border-bottom-left-radius:var(--O-0);
+      margin-top:auto;
+      margin-bottom:auto;
+    }
+    #ivruy{
+      align-self:center;
+    }
+    #izeij{
+      width:var(--L20);
+      height:var(--L20);
+      object-fit:cover;
+    }
+    #invyt{
+      text-align:center;
+      padding-top:var(--O-0);
+      padding-left:var(--O-0);
+      padding-bottom:var(--O-0);
+      padding-right:var(--O-0);
+      margin-bottom:-2.5em;
+    }
+    #iwbai-2{
+      height:0.25rem;
+      --w2:100%;
+      color:var(--primary);
+    }
+    #i0j8i-2{
+      width:3rem;
+      --w:0;
+    }
+    #iq462{
+      font-size:1.2em;
+    }
+    @media (max-width: 992px){
+      #i4oo{
+        margin-left:auto;
+        margin-right:auto;
+      }
+      #i1b45{
+        border-right-width:var(--s-5);
+      }
+      #ip3d{
+        margin-top:var(--L10);
+      }
+    }
+    @media (max-width: 768px){
+      #in9yk{
+        width:100%;
+        height:250px;
+      }
+      #i1b45{
+        border-right-width:var(--O-0);
+        border-bottom-width:var(--s-5);
+        border-right-style:none;
+        border-bottom-style:solid;
+      }
+      #i7dbe{
+        padding-left:var(--L8);
+        margin-top:var(--L6);
+      }
+      #iq462{
+        font-size:1em;
+      }
+    }
+    @media (max-width: 480px){
+      #ip3d{
+        margin-top:var(--L10);
+      }
+      #ihzfw{
+        padding-bottom:var(--L4);
+      }
+      #i7dbe{
+        padding-left:var(--O-0);
+        padding-right:var(--O-0);
+        margin-top:var(--L4);
+        padding-top:var(--O-0);
+      }
+    }
+    </style>`,
+      category: 'Content',
+      kind: 'Section'
+    },
+
+
 ];
 
     

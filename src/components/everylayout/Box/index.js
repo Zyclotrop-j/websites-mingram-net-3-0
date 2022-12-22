@@ -147,6 +147,7 @@ export default editor => {
                 attributes: {},
                 stylable: [
                   'width',
+                  'max-width',
                   'padding',
                   'margin',
                   'color',

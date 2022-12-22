@@ -64,7 +64,7 @@ export default [
         id: 'profile-combo',
         label: `<figure style="margin: 5px;" class="w100">
             ${""}
-        <figcaption>Profile</figcaption></figure>`,
+        <figcaption>Profile-attribution</figcaption></figure>`,
         content: `<sidebar-l sidewidth="var(--max)" contentmin="5%" space="var(--O-0)" id="ia33j">
         <icon-l space="var(--O-0)" icon="icons/radix-icons-person.svg" iconname="person" id="iqmud">
         </icon-l>
@@ -92,4 +92,75 @@ export default [
         category: 'Combo',
         kind: 'Part'
     },
+    {
+      id: 'profile-large',
+      label: `<figure style="margin: 5px;" class="w100">
+          ${""}
+      <figcaption>Profile</figcaption></figure>`,
+      content: `<c-card class="card" id="i1b45-2">
+      <c-card-image class="card-image" id="ivruy-2">
+        <img class="image round" src="https://via.placeholder.com/150" id="izeij-2"/>
+      </c-card-image>
+      <c-card-header class="card-header" id="iyjuk-2">
+        <c-card-header-title class="card-header-title is-centered" id="igozx-2">
+          <h2 class="is-2 h-tag" name="default-name">
+            <span id="iacwg-2">Phoebe Caulfield</span>
+          </h2>
+        </c-card-header-title>
+      </c-card-header>
+      <c-card-content class="card-content" id="invyt-2">
+        <div data-spacer="vertical" id="iwbai-2-2">
+          <span data-spacer="horizontal" id="i0j8i-2-2"></span>
+        </div>
+      </c-card-content>
+      <c-card-content class="card-content" id="ihzfw-2">
+        <span id="isfur-2">Raclette knausgaard hella meggs normcore williamsburg enamel pin sartorial venmo tbh hot chicken gentrify portland.</span>
+      </c-card-content>
+    </c-card><style>
+    #i1b45-2{
+      border-right-width:var(--s-5);
+      border-right-style:solid;
+      border-top-left-radius:var(--O-0);
+      border-top-right-radius:var(--O-0);
+      border-bottom-right-radius:var(--O-0);
+      border-bottom-left-radius:var(--O-0);
+      margin-top:auto;
+      margin-bottom:auto;
+    }
+    #ivruy-2{
+      align-self:center;
+    }
+    #izeij-2{
+      width:var(--L20);
+      height:var(--L20);
+      object-fit:cover;
+    }
+    #iwbai-2-2{
+      height:0.25rem;
+      --w2:100%;
+      color:var(--primary);
+    }
+    #i0j8i-2-2{
+      width:3rem;
+      --w:0;
+    }
+    #invyt-2{
+      text-align:center;
+      padding-top:var(--O-0);
+      padding-left:var(--O-0);
+      padding-bottom:var(--O-0);
+      padding-right:var(--O-0);
+      margin-bottom:-2.5em;
+    }
+    #ihzfw-2{
+      text-align:center;
+      font-size:0.9em;
+    }
+    </style>`,
+      category: 'Combo',
+      kind: 'Part'
+  },
+
+
+    
 ];

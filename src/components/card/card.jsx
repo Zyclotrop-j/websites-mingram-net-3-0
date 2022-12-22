@@ -132,7 +132,7 @@ export default editor => {
           defaults: {
               tagName: contentelement,
               draggable: `${typeelement}.card`,
-              droppable: inlineflowelement,
+              droppable: `${inlineflowelement}, [data-spacer=vertical]`,
               attributes: {
                 class: 'card-content',
               },

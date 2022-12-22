@@ -1,4 +1,4 @@
-.image.round {
+.image.round, .card-image:first-child img.image.round {
     border-radius: 9999px;
 }
 c-card-image.card-image > img.image {

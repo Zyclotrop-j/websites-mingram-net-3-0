@@ -97,7 +97,8 @@ export default editor => {
     }
     editor.Components.addType(type, {
         model: Image,
-        view: View
+        view: View,
+        privateClass: ['round']
     });
     const existingSelector = editor.Selectors.getAll().findWhere({
         type: 1,

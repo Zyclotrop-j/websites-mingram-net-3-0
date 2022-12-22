@@ -139,6 +139,21 @@ export default editor => {
               }
             ]
           },
+          {
+            label: 'Width',
+            property: 'width',
+            type: 'size-preset',
+          },
+          {
+            label: 'Height',
+            property: 'height',
+            type: 'size-preset',
+          },
+          {
+            label: 'Max-Width',
+            property: 'max-width',
+            type: 'size-preset',
+          },
         ],
     });
 
