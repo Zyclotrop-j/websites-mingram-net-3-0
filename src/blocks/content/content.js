@@ -4,6 +4,8 @@ import content6icon from './content-6-icon.svg';
 import contentlinklist from './content-linklist.svg';
 import contenttext from './content-text.svg';
 import contentintroduction from './content-introduction.svg';
+import content2cards from './content-2-cards.svg';
+import contentcards from './content-cards.svg';
 
 export default [
     {
@@ -1481,11 +1483,11 @@ export default [
       kind: 'Section'
     },
     {
-      id: 'content-introduction',
+      id: 'content-profile',
       label: `<figure style="margin: 5px;" class="w100">
           ${contentintroduction}
-      <figcaption>Content with introduction</figcaption></figure>`,
-      content: `<box-l-section padding="var(--s1)" id="i4oo" background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scalemobile="" scaleMobile="">
+      <figcaption>Content with profile</figcaption></figure>`,
+      content: `<box-l-section data-gjs-custom-name="Profile content" padding="var(--s1)" id="i4oo" background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scalemobile="" scaleMobile="">
       <img class="image" src="https://via.placeholder.com/1200" id="in9yk"/>
       <sidebar-l sidewidth="var(--n2xs)" contentmin="50%" side="left" nostretch="" id="ip3d" space="var(--O-0)">
         <c-card class="card" id="i1b45">
@@ -1628,6 +1630,378 @@ export default [
       category: 'Content',
       kind: 'Section'
     },
+    {
+      id: 'content-two',
+      label: `<figure style="margin: 5px;" class="w100">
+          ${content2cards}
+      <figcaption>Content with two cards</figcaption></figure>`,
+      content: `<box-l-section data-gjs-custom-name="Big-card's content" padding="0" id="i4oo-3" background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scaleMobile="">
+      <grid-l min="var(--lg)" space="var(--L8)" id="ikp5e">
+        <c-card class="card" id="iah04">
+          <c-card-image class="card-image" id="ivnt6">
+            <img class="image" src="https://via.placeholder.com/1200" id="ivaxu"/>
+          </c-card-image>
+          <c-card-header class="card-header" id="ix2ds">
+            <c-card-header-title class="card-header-title is-centered" id="i707k">
+              <h2 class="is-2 h-tag" name="default-name" id="iu38x">
+                <span id="izc8a">Buy YouTube Videos</span>
+              </h2>
+            </c-card-header-title>
+          </c-card-header>
+          <c-card-content class="card-content" id="ibedm">
+            <span id="i844c">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony. Button</span>
+          </c-card-content>
+          <c-card-footer class="card-footer" id="iqeto">
+            <c-card-footer-item class="card-footer-item" id="ii7dx">
+              <button class="button is-responsive is-normal is-primary" name="default-name" id="inu5j"><span>Press me!</span></button>
+            </c-card-footer-item>
+          </c-card-footer>
+        </c-card>
+        <c-card class="card" id="igohl">
+          <c-card-image class="card-image" id="iudnn">
+            <img class="image" src="https://via.placeholder.com/1200" id="ihqdr"/>
+          </c-card-image>
+          <c-card-header class="card-header" id="ipfwd">
+            <c-card-header-title class="card-header-title is-centered" id="iwlmo">
+              <h2 class="is-2 h-tag" name="default-name" id="i37i5">
+                <span id="iw6d9">Buy YouTube Videos</span>
+              </h2>
+            </c-card-header-title>
+          </c-card-header>
+          <c-card-content class="card-content" id="izzgk">
+            <span id="iykfd">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony. Button</span>
+          </c-card-content>
+          <c-card-footer class="card-footer">
+            <c-card-footer-item class="card-footer-item" id="i4svg">
+              <button class="button is-responsive is-normal is-primary" name="default-name" id="iz0ki"><span>Press me!</span></button>
+            </c-card-footer-item>
+          </c-card-footer>
+        </c-card>
+      </grid-l>
+    </box-l-section><style>
+      #i4oo-3{
+        margin-left:var(--L5);
+        margin-right:var(--L5);
+        margin-bottom:var(--L24);
+        margin-top:var(--L24);
+      }
+      #ivaxu{
+        height:250px;
+        object-fit:cover;
+      }
+      #ii7dx{
+        margin-top:var(--L6);
+      }
+      #inu5j{
+        width:7em;
+      }
+      #i707k{
+        padding-bottom:var(--L3);
+        padding-top:var(--L6);
+      }
+      #ibedm{
+        padding-top:var(--O-0);
+        padding-bottom:var(--O-0);
+        text-align:center;
+      }
+      #ihqdr{
+        height:250px;
+        object-fit:cover;
+      }
+      #iwlmo{
+        padding-bottom:var(--L3);
+        padding-top:var(--L6);
+      }
+      #izzgk{
+        padding-top:var(--O-0);
+        padding-bottom:var(--O-0);
+        text-align:center;
+      }
+      #iz0ki{
+        width:7em;
+      }
+      #i4svg{
+        margin-top:var(--L6);
+      }
+      #i37i5{
+        text-align:center;
+      }
+      #iu38x{
+        text-align:center;
+      }
+      @media (max-width: 992px){
+        #ii7dx{
+          margin-top:var(--L2);
+        }
+        #i4svg{
+          margin-top:var(--L2);
+        }
+      }
+      @media (max-width: 768px){
+        #ihqdr{
+          height:200px;
+        }
+        #ivaxu{
+          height:200px;
+        }
+      }
+      @media (max-width: 480px){
+        #izzgk{
+          padding-top:var(--O-0);
+          padding-bottom:var(--O-0);
+        }
+        #iwlmo{
+          padding-top:var(--L6);
+          padding-bottom:var(--L3);
+        }
+        #ivaxu{
+          height:120px;
+        }
+        #ihqdr{
+          height:120px;
+        }
+      }  
+    </style>`,
+      category: 'Content',
+      kind: 'Section'
+    },
+    {
+      id: 'content-cards',
+      label: `<figure style="margin: 5px;" class="w100">
+          ${contentcards}
+      <figcaption>Content cards with heading</figcaption></figure>`,
+      content: `<box-l-section padding="0" id="i4oo-3" background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scalemobile="">
+      <box-l background="" highlight="" base="" secondary="" type="" size="" motion="" zoom="" special="" scale="" scaleMobile="" id="irsp7h">
+        <div data-spacer="vertical" id="iwbai-3" data-force="width">
+          <span data-spacer="horizontal" id="i0j8i-3" data-inherit="height"></span>
+        </div>
+      </box-l>
+      <grid-12 class="" name="default-name" id="i3lgnm">
+        <grid-item class="" name="default-name" data-width="6" id="iihtdy">
+          <h2 class="is-2 h-tag" name="default-name" id="ig0svu">
+            <span id="ip2leg">Space The Final Frontier</span>
+          </h2>
+        </grid-item>
+        <grid-item class="" name="default-name" data-width="6" id="ih7ap9">
+          <p class="content" name="default-name" id="igodpr">
+            <span id="it49h7">Street art subway tile salvia four dollar toast bitters selfies quinoa yuccie synth meditation iPhone intelligentsia prism tofu. Viral gochujang bitters dreamcatcher.</span>
+          </p>
+        </grid-item>
+      </grid-12>
+      <grid-l min="var(--md)" space="var(--L8)" id="ikp5e">
+        <c-card class="card" id="iah04">
+          <c-card-image class="card-image" id="ivnt6">
+            <img class="image" src="https://via.placeholder.com/1200" id="ivaxu"/>
+          </c-card-image>
+          <c-card-header class="card-header" id="ix2ds">
+            <c-card-header-title class="card-header-title" id="i707k">
+              <h2 class="is-2 h-tag" name="default-name" id="iu38x">
+                <span id="izc8a">Shooting Stars</span>
+              </h2>
+            </c-card-header-title>
+          </c-card-header>
+          <c-card-content class="card-content" id="ibedm">
+            <span id="i844c">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</span>
+          </c-card-content>
+          <c-card-footer class="card-footer" id="iqeto">
+            <c-card-footer-item class="card-footer-item" id="ib2eih">
+              <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline" id="il0rkm"><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i0j4iu-3">
+                </icon-l></a>
+            </c-card-footer-item>
+          </c-card-footer>
+        </c-card>
+        <c-card class="card" id="i8np0x">
+          <c-card-image class="card-image">
+            <img class="image" src="https://via.placeholder.com/1200" id="ijf1em"/>
+          </c-card-image>
+          <c-card-header class="card-header">
+            <c-card-header-title class="card-header-title" id="i7b5w4">
+              <h2 class="is-2 h-tag" name="default-name" id="iujs6j">
+                <span id="i9iu0b">The Catalyzer</span>
+              </h2>
+            </c-card-header-title>
+          </c-card-header>
+          <c-card-content class="card-content" id="i5x7dz">
+            <span id="i4ei3g">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</span>
+          </c-card-content>
+          <c-card-footer class="card-footer" id="i7keak">
+            <c-card-footer-item class="card-footer-item" id="ifjnvk">
+              <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline" id="iwona9"><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i63kpg">
+                </icon-l></a>
+            </c-card-footer-item>
+          </c-card-footer>
+        </c-card>
+        <c-card class="card" id="ip5h6h">
+          <c-card-image class="card-image">
+            <img class="image" src="https://via.placeholder.com/1200" id="ipjlvi"/>
+          </c-card-image>
+          <c-card-header class="card-header">
+            <c-card-header-title class="card-header-title" id="ib229g">
+              <h2 class="is-2 h-tag" name="default-name" id="io9p2n">
+                <span id="ivgk0d">The 400 Blows</span>
+              </h2>
+            </c-card-header-title>
+          </c-card-header>
+          <c-card-content class="card-content" id="ihro9c">
+            <span id="iriksh">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</span>
+          </c-card-content>
+          <c-card-footer class="card-footer" id="ivbaqg">
+            <c-card-footer-item class="card-footer-item" id="i1kpvh">
+              <a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline" id="i1pssx"><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="ifwshz">
+                </icon-l></a>
+            </c-card-footer-item>
+          </c-card-footer>
+        </c-card>
+      </grid-l>
+    </box-l-section><style>
+    #i4oo-3{
+      margin-left:var(--L5);
+      margin-right:var(--L5);
+      margin-bottom:var(--L24);
+      margin-top:var(--L24);
+    }
+    #ivaxu{
+      height:250px;
+      object-fit:cover;
+    }
+    #i707k{
+      padding-bottom:var(--L3);
+      padding-top:var(--L6);
+      padding-left:var(--O-0);
+    }
+    #ibedm{
+      padding-top:var(--O-0);
+      padding-bottom:var(--O-0);
+      text-align:left;
+      padding-left:var(--O-0);
+      line-height:1.625em;
+      font-size:1em;
+    }
+    #iu38x{
+      text-align:center;
+    }
+    #ib2eih{
+      justify-content:flex-start;
+      padding-left:var(--O-0);
+    }
+    #i0j4iu-3{
+      font-size:1em;
+      align-self:center;
+      margin-left:var(--L3);
+    }
+    #ipjlvi{
+      height:250px;
+      object-fit:cover;
+    }
+    #io9p2n{
+      text-align:center;
+    }
+    #ib229g{
+      padding-bottom:var(--L3);
+      padding-top:var(--L6);
+      padding-left:var(--O-0);
+    }
+    #ihro9c{
+      padding-top:var(--O-0);
+      padding-bottom:var(--O-0);
+      text-align:left;
+      padding-left:var(--O-0);
+      line-height:1.625em;
+      font-size:1em;
+    }
+    #ifwshz{
+      font-size:1em;
+      align-self:center;
+      margin-left:var(--L3);
+    }
+    #i1kpvh{
+      justify-content:flex-start;
+      padding-left:var(--O-0);
+    }
+    #ijf1em{
+      height:250px;
+      object-fit:cover;
+    }
+    #iujs6j{
+      text-align:center;
+    }
+    #i7b5w4{
+      padding-bottom:var(--L3);
+      padding-top:var(--L6);
+      padding-left:var(--O-0);
+    }
+    #i5x7dz{
+      padding-top:var(--O-0);
+      padding-bottom:var(--O-0);
+      text-align:left;
+      padding-left:var(--O-0);
+      line-height:1.625em;
+      font-size:1em;
+    }
+    #i63kpg{
+      font-size:1em;
+      align-self:center;
+      margin-left:var(--L3);
+    }
+    #ifjnvk{
+      justify-content:flex-start;
+      padding-left:var(--O-0);
+    }
+    #i3lgnm{
+      margin-bottom:var(--L12);
+      padding-bottom:var(--L6);
+      padding-top:var(--L6);
+    }
+    #iwbai-3{
+      height:0.25rem;
+      --w2:100%;
+      color:var(--grey-lightest);
+    }
+    #i0j8i-3{
+      width:20%;
+      --w:100%;
+      color:var(--primary);
+      vertical-align:top;
+    }
+    @media (max-width: 992px){
+      #ib2eih{
+        margin-top:var(--L2);
+      }
+      #i1kpvh{
+        margin-top:var(--L2);
+      }
+      #ifjnvk{
+        margin-top:var(--L2);
+      }
+    }
+    @media (max-width: 768px){
+      #ivaxu{
+        height:200px;
+      }
+      #ipjlvi{
+        height:200px;
+      }
+      #ijf1em{
+        height:200px;
+      }
+    }
+    @media (max-width: 480px){
+      #ivaxu{
+        height:120px;
+      }
+      #ipjlvi{
+        height:120px;
+      }
+      #ijf1em{
+        height:120px;
+      }
+    }    
+    </style>`,
+      category: 'Content',
+      kind: 'Section'
+    },
+
+
 
 
 ];

@@ -4,7 +4,7 @@ export default [
         label: `<figure style="margin: 5px;" class="w100">
             ${""}
         <figcaption>Block link with arrow</figcaption></figure>`,
-        content: `<a class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline" ><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i0j4iu">
+        content: `<a data-gjs-custom-name="Link (arrow)" class="" data-type="block" href="#" title="" target="self" rel="" data-force="inline" ><span>Learn more</span><icon-l icon="icons/maki-arrow.svg" iconname="arrow" space="var(--O-0)" id="i0j4iu">
         </icon-l></a><style>
         #i0j4iu{
             font-size:1em;
@@ -20,7 +20,7 @@ export default [
         label: `<figure style="margin: 5px;" class="w100">
             ${""}
         <figcaption>Views and comments</figcaption></figure>`,
-        content: `<p class="content" id="i6p6g">
+        content: `<p class="content" id="i6p6g" data-gjs-custom-name="View- and Comment-count">
         <icon-l id="i9ubo" icon="icons/ph-eye.svg" iconname="eye" space="var(--s-3)">
         </icon-l>
         <span id="if6oh">1.2K</span>
@@ -45,7 +45,7 @@ export default [
         label: `<figure style="margin: 5px;" class="w100">
             ${""}
         <figcaption>Decorative line</figcaption></figure>`,
-        content: `<div data-spacer="vertical" id="iwbai">
+        content: `<div data-spacer="vertical" id="iwbai" data-gjs-custom-name="Line">
         <span data-spacer="horizontal" id="i0j8i"></span><style>
           #iwbai{
             height:0.25rem;
@@ -65,7 +65,7 @@ export default [
         label: `<figure style="margin: 5px;" class="w100">
             ${""}
         <figcaption>Profile-attribution</figcaption></figure>`,
-        content: `<sidebar-l sidewidth="var(--max)" contentmin="5%" space="var(--O-0)" id="ia33j">
+        content: `<sidebar-l sidewidth="var(--max)" contentmin="5%" space="var(--O-0)" id="ia33j" data-gjs-custom-name="Profile attribution">
         <icon-l space="var(--O-0)" icon="icons/radix-icons-person.svg" iconname="person" id="iqmud">
         </icon-l>
         <box-l>
@@ -97,7 +97,7 @@ export default [
       label: `<figure style="margin: 5px;" class="w100">
           ${""}
       <figcaption>Profile</figcaption></figure>`,
-      content: `<c-card class="card" id="i1b45-2">
+      content: `<c-card class="card" id="i1b45-2" data-gjs-custom-name="Profile">
       <c-card-image class="card-image" id="ivruy-2">
         <img class="image round" src="https://via.placeholder.com/150" id="izeij-2"/>
       </c-card-image>
@@ -159,7 +159,32 @@ export default [
     </style>`,
       category: 'Combo',
       kind: 'Part'
-  },
+    },
+    {
+      id: 'progress-bar',
+      label: `<figure style="margin: 5px;" class="w100">
+          ${""}
+      <figcaption>Progress</figcaption></figure>`,
+      content: `<div role="progressbar" data-gjs-custom-name="Progress" data-spacer="vertical" id="iwbai-3" data-force="width">
+        <span data-spacer="horizontal" id="i0j8i-3" data-inherit="height"></span>
+      </div><style>
+        #iwbai-3{
+          height:0.25rem;
+          --w2:100%;
+          color:var(--grey-lightest);
+        }
+        #i0j8i-3{
+          width:20%;
+          --w:100%;
+          color:var(--primary);
+          vertical-align:top;
+        }
+      </style>`,
+      category: 'Decorations',
+      kind: 'Part'
+    },
+
+    
 
 
     

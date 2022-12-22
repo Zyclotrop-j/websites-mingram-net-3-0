@@ -39,6 +39,15 @@ editor.Components.addType(typevertical, {
                 label: 'Kind',
                 name: 'tagName',
                 changeProp: 1,
+              },
+              {
+                type: 'select',
+                options: [
+                    { value: 'none', name: 'Default' },
+                    { value: 'width', name: 'Force' },
+                ],
+                label: 'Force width',
+                name: 'data-force',
               }
             ],
             components: [],
@@ -48,6 +57,9 @@ editor.Components.addType(typevertical, {
                     --c2: currentColor;
                     display: inline-block;
                     margin: 0;
+                }
+                [data-spacer=vertical][data-force=width] {
+                  width: var(--w2);
                 }
             `,
           }
@@ -92,7 +104,16 @@ editor.Components.addType(typevertical, {
                 label: 'Kind',
                 name: 'tagName',
                 changeProp: 1,
-              }
+              },
+              {
+                type: 'select',
+                options: [
+                    { value: 'none', name: 'Remain invisible' },
+                    { value: 'height', name: 'Force height' },
+                ],
+                label: 'Inherit height',
+                name: 'data-inherit',
+              },
             ],
             components: [],
             styles: `
@@ -103,6 +124,10 @@ editor.Components.addType(typevertical, {
                     height: 1em;
                     min-height: 5px;
                     margin: 0;
+                }
+                [data-spacer=horizontal][data-inherit=height] {
+                  height: inherit;
+                  min-height: 0px;
                 }
             `,
           }

@@ -10,7 +10,7 @@ export default (editor) => {
     })
     .then((willDelete) => {
         if (willDelete) {
-            e.runCommand('core:canvas-clear');
+            editor.DomComponents.clear();
         }
     }));
 
