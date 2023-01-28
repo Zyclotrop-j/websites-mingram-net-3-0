@@ -14,7 +14,9 @@
     "@fastify/static": "^6.6.0",
     "exiftool-vendored": "^19.0.0",
     "fastify": "^4.10.2",
+    "find-remove": "^4.1.0",
     "huge-uploader-nodejs": "^1.2.1",
+    "lodash.debounce": "^4.0.8",
     "lru-cache": "^7.14.1",
     "mime-types": "^2.1.35"
   }

@@ -1,5 +1,4 @@
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { join } from 'path';
 import fs from 'node:fs/promises';
 import syncfs from 'node:fs';
 
@@ -13,8 +12,9 @@ import LRU from 'lru-cache';
 
 import handleError from './handleError.mjs';
 import { whitelisted } from './whitelisted.mjs';
+import { cleanup } from './cleanup.mjs';
+import { __dirname } from './dirname.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
 async function processExif({ targetPath, headers, meta }) {
     const exiftool = new ExifTool({ taskTimeoutMillis: 6000 });
     const tags = await exiftool.read(targetPath);
@@ -28,7 +28,7 @@ async function processExif({ targetPath, headers, meta }) {
 
 const cache = new LRU({
     max: 500,
-})
+});
 
 const fastify = Fastify({ logger: true });
 
@@ -88,6 +88,7 @@ fastify.all('/upload/', {
     }
 }, async (req, res) => {
     req.log.info(`initiating upload`);
+    cleanup(req.log);
     try {
         const assembleChunks = await uploader(req.raw, join(__dirname, 'tmp'), 100, 10);
         if (assembleChunks) {
@@ -123,8 +124,9 @@ fastify.all('/upload/', {
         return handleError({ maxFileSize: 100, res, req, err })
     }
 });
-// cleanup: find /var/www/tmp -type d -mtime +1 -delete
-fastify.listen(3003, (err) => {
+fastify.listen({
+    port: 3003
+}, (err) => {
     if (err) {
         fastify.log.error(err);
         process.exit(1);
