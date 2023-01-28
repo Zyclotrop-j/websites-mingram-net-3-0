@@ -18,6 +18,7 @@
 /static/icons.json
 /todo
 /env
+/.tmp
 
 # misc
 .DS_Store
@@ -39,3 +40,10 @@ yarn-error.log*
 
 # tus
 /tusd_windows_amd64
+
+/server/files
+/server/tmp
+/server/node_modules
+
+!/server/files/.gitkeep
+!/server/tmp/.gitkeep

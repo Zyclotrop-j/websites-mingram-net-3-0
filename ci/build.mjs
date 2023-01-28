@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import esbuild from "esbuild";
 import { sassPlugin } from 'esbuild-sass-plugin'
 import sveltePlugin from "esbuild-svelte";
+import buildSW from "./build-sw.mjs";
 
 const meta1 = await esbuild.build({
     entryPoints: ['src/index.js'],
@@ -54,3 +55,8 @@ const meta2 = await esbuild.build({
 
 await fs.writeFile('build/meta.index.json', JSON.stringify(meta1.metafile));
 await fs.writeFile('build/meta.website.json', JSON.stringify(meta2.metafile));
+
+await buildSW({
+  index: meta1,
+  website: meta2,
+});

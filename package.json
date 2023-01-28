@@ -31,6 +31,7 @@
     "grapesjs": "^0.19.5",
     "grapesjs-preset-webpage": "^0.1.11",
     "html2canvas": "^1.4.1",
+    "huge-uploader": "^1.0.6",
     "idb": "^7.0.2",
     "leaflet": "^1.9.1",
     "lodash.debounce": "^4.0.8",
@@ -50,6 +51,7 @@
     "uppy": "^3.2.1",
     "uuid": "^9.0.0",
     "vanta": "^0.5.24",
+    "workbox-window": "^6.5.4",
     "zen-observable": "^0.8.15"
   },
   "devDependencies": {
@@ -62,6 +64,7 @@
     "nodemon": "^2.0.19",
     "rimraf": "^3.0.2",
     "serve": "^14.1.2",
-    "shx": "^0.3.4"
+    "shx": "^0.3.4",
+    "workbox-build": "^6.5.4"
   }
 }

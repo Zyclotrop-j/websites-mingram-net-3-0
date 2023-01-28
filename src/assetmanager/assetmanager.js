@@ -1,10 +1,10 @@
-import { Uppy, Tus, DropTarget, StatusBar, Informer } from 'uppy';
+import { Uppy, XHRUpload, DropTarget, StatusBar, Informer } from 'uppy';
 import { v4 as uuidv4 } from 'uuid';
 import AssetManager from './assetmanager.svelte';
 
 const mimeTypeMatcher = /^(.+)\/(.+)$/;
 
-export default function blockManager(editor) {
+export default function assetManagerManager(editor, serviceWorkerRegistration) {
     const assetManager = editor.AssetManager;
 
     const div = document.createElement("div");
@@ -62,13 +62,15 @@ export default function blockManager(editor) {
     const uppy = new Uppy({
         autoProceed: true,
         onBeforeFileAdded: (currentFile) => {
+            const nname = uuidv4();
             const modifiedFile = {
                 ...currentFile,
                 meta: {
                     ...currentFile.meta,
                     original_name: currentFile.name,
+                    name: nname,
                 },
-                name: `${uuidv4()}`,
+                name: nname,
             }
             return modifiedFile
         },
@@ -76,7 +78,26 @@ export default function blockManager(editor) {
     uppy.use(StatusBar, { target: statusbar });
     uppy.use(Informer, { target: informer });
     //uppy.use(DragDrop, { target: upload });
-    uppy.use(Tus, { endpoint: 'http://localhost:1080/files/' });
+    uppy.use(XHRUpload, {
+        endpoint: '/assets/',
+        method: "PUT",
+        formData: false,
+        headers: file => {
+            return {
+                ...Object.fromEntries(Object.entries(file.meta).map(([k, v]) => [`meta-${k}`, typeof v === 'string' ? v : JSON.stringify(v)])),
+                name: file.name,
+            }; // add lasting auth here!
+        },
+        getResponseData: (responseText, response) => {
+            return {
+              url: response.getResponseHeader('Location')
+            }
+        }
+    });
+
+    // serviceWorkerRegistration
+    // use a custom plugin https://uppy.io/docs/writing-plugins/#Example-of-a-custom-plugin -> await serviceWorkerRegistration and set width/height
+
     //uppy.use(Dashboard, {inline: true, target: upload });
     uppy.use(DropTarget, { target: upload });
 
@@ -92,8 +113,9 @@ export default function blockManager(editor) {
             URL.revokeObjectURL(url)
         };
     })
-    uppy.on('upload-success', (file, {uploadURL}) => {
-       const asset = {
+    uppy.on('upload-success', (file, obj) => {
+        const {uploadURL} = obj;
+        const asset = {
             extension: file.extension,
             id: file.id,
             meta: file.meta,

@@ -58,7 +58,7 @@ export default async function (editor) {
                     key: currentDocument
                 }
             }).exec();
-            return doc.data;
+            return doc?.data;
         },
     
         async store(data, options = {}) {

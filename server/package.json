@@ -1,0 +1,21 @@
+{
+  "name": "tus-websites-mingram-net-3-0",
+  "version": "1.0.0",
+  "description": "a tus server serving as target for asset uploads",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.mjs"
+  },
+  "author": "Jannes Mingram <jannes@mingram.net>",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^8.2.0",
+    "@fastify/static": "^6.6.0",
+    "exiftool-vendored": "^19.0.0",
+    "fastify": "^4.10.2",
+    "huge-uploader-nodejs": "^1.2.1",
+    "lru-cache": "^7.14.1",
+    "mime-types": "^2.1.35"
+  }
+}
