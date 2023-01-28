@@ -35,6 +35,7 @@
     "idb": "^7.0.2",
     "leaflet": "^1.9.1",
     "lodash.debounce": "^4.0.8",
+    "lodash.get": "^4.4.2",
     "lodash.once": "^4.1.1",
     "lru-cache": "^7.14.0",
     "p-queue": "^7.3.0",

@@ -1,10 +1,21 @@
 import { registerRoute } from 'workbox-routing';
+import { hprefix } from './utils';
 
 export function setupGet(assetcache) {
     const refresh = async ({ url, cache }) => {
-        const resp = await fetch(`http://localhost:3003${url.pathname}`);
-        if (`${resp.status}`.startsWith('2'))
-            cache.put(`${url.pathname}`, resp.clone());
+        let resp = await fetch(`http://localhost:3003${url.pathname}`);
+        
+        if (`${resp.status}`.startsWith('2')) {
+            const newHeaders = new Headers(resp.headers);
+            newHeaders.append(`${hprefix}-status`, "CLOUD",);
+            const newResp = new Response(resp.body, {
+                status: resp.status,
+                statusText: resp.statusText,
+                headers: newHeaders
+            });
+            cache.put(`${url.pathname}`, newResp.clone());
+            resp = newResp;
+        }
         return resp.clone();
     };
 

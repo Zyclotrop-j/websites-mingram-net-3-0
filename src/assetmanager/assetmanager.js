@@ -88,9 +88,17 @@ export default function assetManagerManager(editor, serviceWorkerRegistration) {
                 name: file.name,
             }; // add lasting auth here!
         },
-        getResponseData: (responseText, response) => {
+        getResponseData: (__, response) => {
+            const arr = (response.getAllResponseHeaders() ?? '').trim().split(/[\r\n]+/);
+            const headerMap = Object.fromEntries(arr.map((line) => {
+                const parts = line.split(': ');
+                const header = parts.shift();
+                const value = parts.join(': ');
+                return [header, value];
+            }).filter(([k]) => k.startsWith('sitecloud-')));
             return {
-              url: response.getResponseHeader('Location')
+                ...headerMap,
+                url: response.getResponseHeader('Location')
             }
         }
     });
@@ -134,6 +142,7 @@ export default function assetManagerManager(editor, serviceWorkerRegistration) {
         }
         if(file.height || file.meta.height) asset.height = file.height || file.meta.height;
         if(file.width || file.meta.width) asset.width = file.width || file.meta.width;
+
         assetManager.add(asset);
 
     });
