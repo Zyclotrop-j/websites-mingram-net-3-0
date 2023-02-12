@@ -14,6 +14,7 @@ import handleError from './handleError.mjs';
 import { whitelisted } from './whitelisted.mjs';
 import { cleanup } from './cleanup.mjs';
 import { __dirname } from './dirname.mjs';
+import signalingServer from './signallingserver.mjs';
 
 async function processExif({ targetPath, headers, meta }) {
     const exiftool = new ExifTool({ taskTimeoutMillis: 6000 });
@@ -66,6 +67,8 @@ fastify.register(cors, {
     exposedHeaders: `filename,filetype,original_name,name,meta-name,meta-original_name,meta-relativepath,meta-type,meta-width,meta-height,imagesize,uploader-file-id,atimeMs,mtimeMs,ctimeMs,birthtime`,
     // put your options here
 });
+
+const specs = signalingServer(fastify);
 
 const noop = (_, __, done) => done(null);
 
@@ -124,11 +127,64 @@ fastify.all('/upload/', {
         return handleError({ maxFileSize: 100, res, req, err })
     }
 });
+
+fastify.get('/session/:room', {
+    schema: {
+        response: {
+            200: {
+                description: 'Room information',
+                type: 'object',
+                properties: {
+                    room: { type: 'string' }, 
+                    participants: {
+                        type: 'array',
+                        items: {
+                            type: 'object',
+                            properties: {
+                                socketId: { type: 'string' }, 
+                                room: { type: 'string' }, 
+                                peerId: { type: 'string' }, 
+                                joined: { type: 'string' }, 
+                            }
+                        }
+                    },
+                    length: { type: 'integer' },
+                }
+            },
+            404: {
+                description: 'Room not found'
+            }
+        }
+    },
+    handler: function (request, reply) {
+        const { room } = request.params;
+        const peopleInRoom = [...specs.values()].flat().filter(p => p.room === room).map(({
+            socketId,
+            room,
+            peerId,
+            joined,
+        }) => ({
+            socketId: `${socketId}`,
+            room,
+            peerId: `${peerId}`,
+            joined: joined.toISOString(),
+        }));
+        if(!peopleInRoom.length) {
+            return reply.status(404).send();
+        }
+        reply.send({ room, participants: peopleInRoom, length: peopleInRoom.length });
+    }
+})
+
+
+
 fastify.listen({
-    port: 3003
+    port: 3003,
+    host: '0.0.0.0',
 }, (err) => {
     if (err) {
         fastify.log.error(err);
         process.exit(1);
     }
 });
+

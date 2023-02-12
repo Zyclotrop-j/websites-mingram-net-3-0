@@ -10,7 +10,7 @@ const cells = () => import('vanta/dist/vanta.cells.min').then(i => i.default);
 const dots = () => import('vanta/dist/vanta.dots.min').then(i => i.default);
 const rings = () => import('vanta/dist/vanta.rings.min').then(i => i.default);
 const halo = () => import('vanta/dist/vanta.halo.min').then(i => i.default);
-const three = () => import('three');
+const three = () => import('./three.js').three();
 
 const roleMap = {
   section: "region",

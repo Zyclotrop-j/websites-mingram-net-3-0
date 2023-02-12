@@ -14,10 +14,12 @@
     "@fastify/static": "^6.6.0",
     "exiftool-vendored": "^19.0.0",
     "fastify": "^4.10.2",
+    "fastify-socket.io": "^4.0.0",
     "find-remove": "^4.1.0",
     "huge-uploader-nodejs": "^1.2.1",
     "lodash.debounce": "^4.0.8",
     "lru-cache": "^7.14.1",
-    "mime-types": "^2.1.35"
+    "mime-types": "^2.1.35",
+    "socket.io": "^4.5.4"
   }
 }

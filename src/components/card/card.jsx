@@ -317,7 +317,7 @@ export default editor => {
           async updated() {
             const fname = this.getAttributes().icon;
             lock(this);
-            if(fname && this?.changed?.attributes?.icon && this?.changed?.attributes?.icon !== this.lastIcon) {
+            if(fname && this?.changed?.attributes?.icon && this?.changed?.attributes?.icon !== this.lastIcon && this.view) {
               this.lastIcon = this?.changed?.attributes?.icon;
               const domelement = this.view.el;
               const icondata = await memoFetch(fname);

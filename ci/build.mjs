@@ -3,6 +3,7 @@ import esbuild from "esbuild";
 import { sassPlugin } from 'esbuild-sass-plugin'
 import sveltePlugin from "esbuild-svelte";
 import buildSW from "./build-sw.mjs";
+import buildRXWorker from "./build-rx-worker.mjs";
 
 const meta1 = await esbuild.build({
     entryPoints: ['src/index.js'],
@@ -55,6 +56,9 @@ const meta2 = await esbuild.build({
 
 await fs.writeFile('build/meta.index.json', JSON.stringify(meta1.metafile));
 await fs.writeFile('build/meta.website.json', JSON.stringify(meta2.metafile));
+
+const workerMeta = await buildRXWorker();
+await fs.writeFile('build/meta.rx-worker.json', JSON.stringify(workerMeta.metafile));
 
 await buildSW({
   index: meta1,
