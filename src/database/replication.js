@@ -7,14 +7,48 @@ import {
 } from 'rxdb/plugins/replication-p2p';
 import debounce from 'lodash.debounce';
 import isEqual from 'lodash.isequal';
+import morphdom from 'morphdom';
+import {Mutex} from 'async-mutex';
 
 import { createCollections, database } from './collection';
+import { _load } from './load';
+import diffAndPatch from './diffAndPatch';
+import mutex from './iomutex';
 
 addRxPlugin(RxDBReplicationP2PPlugin);
 
-const rerender = debounce(editor => {
-    editor.load();
-}, 1000);
+const currentProject = 'project-1';
+
+const _rerender = async editor => {
+    if(editor.getDirtyCount() > 0) {
+        await editor.store({ mutex: new Mutex() })
+    } 
+    console.group("Rerender");
+    const change = await _load(new Mutex(), currentProject, {}, { styles: false, assets: false });
+    const selectedPage = editor.Pages.getSelected();
+    const currentPage = change.pages.find(page => selectedPage.id === page.id);
+    const {frames: [plan]} = currentPage;
+    const actual = selectedPage.getMainComponent();
+    const diff = diffAndPatch(plan, actual);
+    console.log(diff, {plan, actual});
+    console.group("Apply render");
+    (new Set(diff.filter(({render}) => render !== false).map(({actual}) => actual))).forEach(async comp => {
+        console.log("COMPONENT", comp);
+        await Promise.resolve();
+        comp?.view?.render();
+    });
+    console.groupEnd();
+    console.groupEnd();
+}
+let queued = false;
+const rerender = async editor => {
+    if(queued) return;
+    queued = true;
+    await mutex.runExclusive(async () => {
+        queued = false; // when we start running, allow a re-queue
+        await _rerender(editor);
+    });
+};
 
 export default async (editor, topic) => {
     await createCollections();
@@ -48,86 +82,70 @@ export default async (editor, topic) => {
         console.log('replicationPool', replicationPool)
         // todo: on page-change load a fresh copy from the db! await editor.load();
 
-        const getChangedAttributes = (prev, next) => {
-            const entr = Object.entries(next).filter(([k, v]) => prev[k] !== v);
-            return [!!entr.length, Object.fromEntries(entr)];
-        };
-
         const subscription = database[collectionName].$.subscribe(async changeEvent => {
-
-            if(!changeEvent.isLocal && !isEqual(changeEvent?.previousDocumentData?.data?.data, changeEvent?.documentData?.data?.data)) {
-                console.log(changeEvent);
-                rerender(editor);
-            }
-            
-            /*switch (`${changeEvent.collectionName}-${changeEvent.operation}`) {
-                case "components-INSERT":
+            console.log(changeEvent);
+            switch (changeEvent.collectionName) {
+                case 'components':
+                case 'pages':
+                    if(
+                        !changeEvent.isLocal && !isEqual(changeEvent?.previousDocumentData?.data, changeEvent?.documentData?.data) ||
+                        changeEvent.operation === "DELETE" // on delete previousDocumentData.data and documentData.data are the same
+                    ) {
+                        rerender(editor);
+                    }
+                    break;
+                case 'styles':
                     // TODO
-                    break;
-                case "components-UPDATE":
-                    console.log(editor.Pages, changeEvent.documentData.data.page, changeEvent.documentData, changeEvent.documentData.data.data.content);
-                    const root = editor.Pages.get(changeEvent.documentData.data.page).getMainComponent(); // only avail on component updates!!
-                    const [component] = root.find(`[c_id="${CSS.escape(changeEvent.documentData.c_id)}"]`);
-                    const [hasChangedAttr, changedAttr] = getChangedAttributes(changeEvent.previousDocumentData.data.data.attributes, changeEvent.documentData.data.data.attributes);
-                    if(hasChangedAttr) {
-                        console.log('rendering changed attrs', changedAttr);
-                        component.setAttributes(changedAttr);
-                    }
-                    if(changeEvent.documentData.data.data.type === 'textnode' && changeEvent.previousDocumentData.data.data.content !== changeEvent.documentData.data.data.content) {
-                        console.log('rendering changed text', changeEvent.documentData.data.data.content)
-                        content.components(changeEvent.documentData.data.data.content);
-                    }
-                    /* TODO: Handle change of
-                    - changeEvent.documentData.data.data.type
-                    - changeEvent.documentData.data.idx
-                    - changeEvent.documentData.data.parentId
+                    console.log('hi')
+                    //editor.Css.clear();
+                    /*
+                    changeEvent?.documentData?.data.forEach(({
+                        atRuleType,
+                        mediaText,
+                        selectors,
+                        style,
+                        //selectorsAdd, // this css is present anyways
+                        //group, // this css is present anyways
+                        state,
+                    }) => {
+                        if(!selectors.length) return;
+                        const rule = selectors.map(sel => state ? `${sel}:${state}` : sel).join(",");
+                        const existingRule = editor.Css.getRule(rule, {
+                            atRuleType,
+                            atRuleParams: mediaText,
+                        });
+                        if(!existingRule || existingRule.selectorsToString() !== rule || existingRule.get("atRuleType") !== atRuleType || existingRule.get("mediaText") !== mediaText)
+                            editor.Css.setRule(rule, style, {
+                                atRuleType,
+                                atRuleParams: mediaText,
+                            });
+                    })
                     
-                    break;
-                case "components-DELETE":
-                    
-                    break;
+                    const existingRules = editor.Css.getRules();
+
+                    existingRules
+
+                    console.log("STYLECHANGE", editor.Css.getRules(), changeEvent?.documentData?.data)
+                    selectorsAdd // ""
+                    selectors // []
+                    group
+                    atRuleType
+                    mediaText
+                    state
+                    singleAtRule
+                    important
+
+                    getAtRule
+                    selectorsToString
+
+                    //addRules remove setRule
+                    */
                 default:
                     break;
-            }*/
-            
-            
-            // changeEvent.previousDocumentData
-            /*
-            collectionName: "components"
-            documentData: {
-                c_id: "5d5b3590-b6d3-4bbd-9bd3-4bef1a772538"
-                data: {
-                    c_id: "5d5b3590-b6d3-4bbd-9bd3-4bef1a772538"
-                    data: {
-                        page: '9YBIjLjcXOkve4PG',
-                        content: '!!!Copper mug try-hard pitchfork pour-over freegan…c tumeric truffaut hexagon try-hard chambray. !!!',
-                        attributes: {…},
-                        type: 'textnode'
-                    }
-                    idx: 0
-                    page: "9YBIjLjcXOkve4PG"
-                    parentId: "997cfd30-43bb-436d-8a7c-0737cd5bb4e0"
-                    type: "textnode"
-                }
-                idx: 0
-                parentId: "997cfd30-43bb-436d-8a7c-0737cd5bb4e0"
-                project: "project-1"
-                type: "textnode"
-                _attachments: {}
-                _deleted: false
-                _meta: {lwt: 1674968650527.01}
-                _rev: "1-vs0vrx"
             }
-            documentId: "5d5b3590-b6d3-4bbd-9bd3-4bef1a772538"
-            endTime: 1674968650527.02
-            eventId: "projectdb|components|5d5b3590-b6d3-4bbd-9bd3-4bef1a772538||000|1-vs0vrx"
-            isLocal: false
-            operation: "INSERT"
-            previousDocumentData: undefined
-            startTime: 1674968650527.01
-            */
-            
-        })
+        });
+
+        // todo: replicate styles, assets and pages
 
         return {
             pool: replicationPool,

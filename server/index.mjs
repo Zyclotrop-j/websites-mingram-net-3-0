@@ -152,7 +152,8 @@ fastify.get('/session/:room', {
                 }
             },
             404: {
-                description: 'Room not found'
+                description: 'Room not found',
+                type: 'null'
             }
         }
     },

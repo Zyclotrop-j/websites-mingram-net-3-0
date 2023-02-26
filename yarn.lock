@@ -2634,6 +2634,11 @@ commoner@^0.10.1:
     q "^1.1.2"
     recast "^0.11.17"
 
+compare-lists@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/compare-lists/-/compare-lists-1.0.10.tgz#907ebf9e52de5dc4f53f4222a0654b2af90e954f"
+  integrity sha512-VFBH+rsO5+FbyuFbJ6aQsOGICDXZu09w3yxQP+8b/7qDj3W3m5sNmK2DoFHfUwAH01RpJtb6fzEqhWy/Cxwg1g==
+
 component-emitter@^1.2.1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.3.0.tgz#16e4070fba8ae29b679f2215853ee181ab2eabc0"
@@ -4693,6 +4698,11 @@ modifyjs@0.3.1:
   dependencies:
     clone "^2.1.1"
     deep-equal "^1.0.1"
+
+morphdom@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/morphdom/-/morphdom-2.7.0.tgz#9ef0c4bc15ac8725df398d127c6984f62e7f89e8"
+  integrity sha512-8L8DwbdjjWwM/aNqj7BSoSn4G7SQLNiDcxCnMWbf506jojR6lNQ5YOmQqXEIE8u3C492UlkN4d0hQwz97+M1oQ==
 
 ms@2.0.0:
   version "2.0.0"
