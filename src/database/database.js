@@ -44,7 +44,7 @@ export default async function (editor) {
     });
 
 
-    const currentProject = 'project-1';
+    const currentProject = 'project-1'; // this is the secret -> make secure long string!!
 
     editor.Storage.add('pouchdb', {
         async load(options) {

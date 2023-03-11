@@ -3,13 +3,13 @@ import {
 } from 'rxdb';
 import {
     RxDBReplicationP2PPlugin,
-    getConnectionHandlerSimplePeer
 } from 'rxdb/plugins/replication-p2p';
 import debounce from 'lodash.debounce';
 import isEqual from 'lodash.isequal';
 import morphdom from 'morphdom';
 import {Mutex} from 'async-mutex';
 
+import { getConnectionHandlerSimplePeer } from './replication/connectionhandler';
 import { createCollections, database } from './collection';
 import { _load } from './load';
 import diffAndPatch from './diffAndPatch';
@@ -51,6 +51,14 @@ const rerender = async editor => {
 };
 
 export default async (editor, topic) => {
+
+    const connectionHandlerCreator = getConnectionHandlerSimplePeer(
+        `ws${location.protocol.startsWith('https') ? 's' : ''}://localhost:3003`,
+        // only in Node.js, we need the wrtc library
+        // because Node.js does not contain the WebRTC API.
+        // require('wrtc')
+    );
+
     await createCollections();
     const [assets, styles, pages, components] = await Promise.all([
         'assets',
@@ -69,12 +77,7 @@ export default async (editor, topic) => {
              * To learn how to create a custom connection handler, read the source code,
              * it is pretty simple.
              */
-            connectionHandlerCreator: getConnectionHandlerSimplePeer(
-                `ws${location.protocol.startsWith('https') ? 's' : ''}://localhost:3003`,
-                // only in Node.js, we need the wrtc library
-                // because Node.js does not contain the WebRTC API.
-                // require('wrtc')
-            ),
+            connectionHandlerCreator,
             pull: {},
             push: {}
         });
@@ -83,7 +86,7 @@ export default async (editor, topic) => {
         // todo: on page-change load a fresh copy from the db! await editor.load();
 
         const subscription = database[collectionName].$.subscribe(async changeEvent => {
-            console.log(changeEvent);
+            //console.log(changeEvent);
             switch (changeEvent.collectionName) {
                 case 'components':
                 case 'pages':
