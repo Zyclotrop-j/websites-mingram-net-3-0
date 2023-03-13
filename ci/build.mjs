@@ -5,6 +5,8 @@ import sveltePlugin from "esbuild-svelte";
 import buildSW from "./build-sw.mjs";
 import buildRXWorker from "./build-rx-worker.mjs";
 
+await fs.cp('static/fav', 'build', { recursive: true });
+
 const meta1 = await esbuild.build({
     entryPoints: ['src/index.js'],
     bundle: true,

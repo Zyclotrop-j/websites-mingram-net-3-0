@@ -13,7 +13,6 @@ export default function startSignalingServer(app) {
         },
       });
 
-    const socketData = new Map();
     app.ready((err) => {
         if (err) throw err;
 
@@ -66,5 +65,5 @@ export default function startSignalingServer(app) {
             });
         });
     });
-    return socketData;
+    return app.io;
 }

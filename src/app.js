@@ -32,6 +32,7 @@ import commands from './commands/index';
 import blockManager from './blockmanager/blockmanager';
 import assetManager from './assetmanager/assetmanager';
 import pagemanager from './pagemanager/pagemanager';
+import rte from './rte/rte';
 
 const serviceWorkerRegistration = swClient({
     promptForUpdate: ({ id, title, text }) => swal({
@@ -82,6 +83,11 @@ const editor = grapesjs.init({
     selectorManager: {
         // componentFirst: true, // we mark 'private' classes as private instead
     },
+    richTextEditor: {
+        stylePrefix: 'rte-',
+        adjustToolbar: true,
+        actions: [],
+    },
     plugins: privateClass([
         database,
         iconTrait,
@@ -117,6 +123,7 @@ const editor = grapesjs.init({
 });
 
 document.body.appendChild(div);
+rte(editor);
 blockManager(editor);
 assetManager(editor, serviceWorkerRegistration);
 pagemanager(editor, {

@@ -4,6 +4,7 @@ import syncfs from 'node:fs';
 
 import Fastify from 'fastify';
 import cors from '@fastify/cors'
+import healthcheck from 'fastify-healthcheck';
 import uploader from 'huge-uploader-nodejs';
 import files from '@fastify/static';
 import mime from 'mime-types';
@@ -15,6 +16,7 @@ import { whitelisted } from './whitelisted.mjs';
 import { cleanup } from './cleanup.mjs';
 import { __dirname } from './dirname.mjs';
 import signalingServer from './signallingserver.mjs';
+import aiServer from './ai/complete.mjs';
 
 async function processExif({ targetPath, headers, meta }) {
     const exiftool = new ExifTool({ taskTimeoutMillis: 6000 });
@@ -32,6 +34,7 @@ const cache = new LRU({
 });
 
 const fastify = Fastify({ logger: true });
+fastify.register(healthcheck);
 
 fastify.register(files, {
     root: join(__dirname, 'files'),
@@ -68,9 +71,6 @@ fastify.register(cors, {
     // put your options here
 });
 
-const specs = signalingServer(fastify);
-
-const noop = (_, __, done) => done(null);
 
 fastify.addSchema({
     $id: 'headers',
@@ -128,6 +128,7 @@ fastify.all('/upload/', {
     }
 });
 
+const specs = signalingServer(fastify);
 fastify.get('/session/:room', {
     schema: {
         response: {
@@ -139,13 +140,7 @@ fastify.get('/session/:room', {
                     participants: {
                         type: 'array',
                         items: {
-                            type: 'object',
-                            properties: {
-                                socketId: { type: 'string' }, 
-                                room: { type: 'string' }, 
-                                peerId: { type: 'string' }, 
-                                joined: { type: 'string' }, 
-                            }
+                            type: 'string',
                         }
                     },
                     length: { type: 'integer' },
@@ -159,25 +154,15 @@ fastify.get('/session/:room', {
     },
     handler: function (request, reply) {
         const { room } = request.params;
-        const peopleInRoom = [...specs.values()].flat().filter(p => p.room === room).map(({
-            socketId,
-            room,
-            peerId,
-            joined,
-        }) => ({
-            socketId: `${socketId}`,
-            room,
-            peerId: `${peerId}`,
-            joined: joined.toISOString(),
-        }));
-        if(!peopleInRoom.length) {
+        const roomdata = specs.of("/").adapter.rooms.get(room);
+        if(!roomdata || !roomdata.size) {
             return reply.status(404).send();
         }
-        reply.send({ room, participants: peopleInRoom, length: peopleInRoom.length });
+        reply.send({ room, participants: [...roomdata], length: roomdata.size });
     }
-})
+});
 
-
+aiServer(fastify);
 
 fastify.listen({
     port: 3003,

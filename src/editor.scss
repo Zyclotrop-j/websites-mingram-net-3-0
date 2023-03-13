@@ -52,6 +52,11 @@
     color: rgba(255, 255, 255, .7);
     border: none;
 }
+details .colorpicker .isOpen.wrapper  {
+    min-width: 200px;
+    background: transparent;
+    border: none;   
+}
 .gjs-block-label figure.w100 > svg {
     width: 100%;
 }
@@ -69,6 +74,12 @@
 }
 .gjs-block svg rect {
     transition: fill 0.5s;
+}
+.gjs-rte-toolbar > .gjs-rte-actionbar { 
+    display: none;
+}
+.gjs-rte-toolbar {
+    min-height: 100px;
 }
 .customassetmanager {
     display: flex;

@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Rasa
+- Font Author: Copyright 2015 The Yrsa-Rasa Project Authors (https://github.com/rosettatype/yrsa-rasa/)
+- Font Source: http://fonts.gstatic.com/s/rasa/v15/xn76YHIn1mWmVKl8ZtAM9NrJfN50JW41fcvN2KT4.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

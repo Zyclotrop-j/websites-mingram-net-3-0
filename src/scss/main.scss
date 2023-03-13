@@ -551,3 +551,8 @@ map-l {
 .screenshot icon-l {
     display: none !important;
 }
+
+.ProseMirror[contenteditable=false] {
+    color: #999;
+    cursor: wait;
+}

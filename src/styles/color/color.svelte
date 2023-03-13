@@ -7,7 +7,7 @@
         {/each}
     </select>
     <span class='or'>or</span>
-    <div class='colorpicker'><ColorPicker label='Custom' aria-label='Pick a color' toRight bind:rgb isDark /></div>
+    <div class='colorpicker'><ColorPicker isOpen={colorPickerIsOpen} isPopup={colorPickerIsPopup} label='Custom' aria-label='Pick a color' toRight={!colorPickerIsOpen ||   colorPickerIsPopup} bind:rgb isDark /></div>
 </div>
 
 <style>
@@ -43,6 +43,9 @@
     export let preset;
     export let mode;
     export let getComputedStyles;
+
+    export let colorPickerIsOpen = false;
+    export let colorPickerIsPopup = true;
 
     function pickTextColorBasedOnBgColorAdvanced(bgColor, lightColor, darkColor, name) {
         if(!bgColor || bgColor.trim() === '-') return 'white';

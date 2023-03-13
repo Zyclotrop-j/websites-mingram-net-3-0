@@ -44,7 +44,7 @@ export default async function (editor) {
     });
 
 
-    const currentProject = 'project-1'; // this is the secret -> make secure long string!!
+    const currentProject = 'project-1'; // this is the secret -> make secure long string!! shareable via url? In logger in mode, make navigateable
 
     editor.Storage.add('pouchdb', {
         async load(options) {
