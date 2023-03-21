@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 import Peer from 'simple-peer';
 import { io } from 'socket.io-client';
 
+const cachedSocket = {};
+
 /**
  * Returns a connection handler that uses simple-peer and the signaling server.
  */
@@ -12,7 +14,12 @@ export function getConnectionHandlerSimplePeer(
     wrtc
 ) {
     const creator = (options) => {  
-        const socket = io(serverUrl);      
+        let deref = cachedSocket[serverUrl]?.deref?.();
+        if(!deref) {
+            deref = io(serverUrl);
+            cachedSocket[serverUrl] = new WeakRef(deref)
+        }
+        const socket = deref;      
 
         const connect$ = new Subject();
         const disconnect$ = new Subject();

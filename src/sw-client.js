@@ -1,3 +1,4 @@
+import swal from 'sweetalert';
 
 const sleep = (ms) => new Promise(res => setTimeout(res, ms));
 
@@ -44,9 +45,8 @@ export default async ({
       const updateAccepted = event.isExternal ? adviceUpdate() : promptForUpdate({ id: "REFRESH", title: "New version available!", text: "Reload the page?" });
   
       if (await updateAccepted) {
-        await wb.messageSkipWaiting();
-        await Promise.resolve();
-        location.reload();
+        wb.messageSkipWaiting();
+        swal("Application updating", "Installing new version and reload the page", "success");
       }
     };
   

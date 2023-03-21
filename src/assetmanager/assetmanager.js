@@ -10,7 +10,9 @@ export default function assetManagerManager(editor, serviceWorkerRegistration) {
     const div = document.createElement("div");
     div.classList.add('customassetmanager');
     const upload = document.createElement("div");
+    upload.classList.add('upupupload')
     const existing = document.createElement("div");
+    existing.classList.add('upexisting-wrap')
     div.appendChild(upload);
     const statusbar = document.createElement("div");
     const informer = document.createElement("div");
@@ -21,6 +23,10 @@ export default function assetManagerManager(editor, serviceWorkerRegistration) {
 
     let activefilter = [];
 
+    const pica = import('pica').then(({default: pica}) => pica({
+        createCanvas: (w, h) => new OffscreenCanvas(w, h),
+    }));
+
     const app = new AssetManager({ target: existing, props: {
         assets: [],
         select: null,
@@ -28,6 +34,7 @@ export default function assetManagerManager(editor, serviceWorkerRegistration) {
             assetManager.remove(arg.id);
             uppy.removeFile(arg.attributes.id || arg.id);
         },
+        picapromise: pica
     } });
     editor.on('asset:custom', (props) => {
         props.container.appendChild(div);

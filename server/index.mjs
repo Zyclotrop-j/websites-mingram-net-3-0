@@ -85,6 +85,11 @@ fastify.addSchema({
         'meta-type': { type: 'string' },
     }
   })
+
+fastify.addContentTypeParser('multipart/form-data', function (request, payload, done) {
+    done(null, "");
+});
+
 fastify.all('/upload/', {
     schema: {
         headers: { $ref: 'headers#' }

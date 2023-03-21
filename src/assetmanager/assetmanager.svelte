@@ -4,7 +4,13 @@
             {#key asset.getSrc()}
             <div class="asset" on:click={select(asset)} on:dblclick={select(asset, true)}>
                 {#if asset.getType() === 'image'}
-                    <img class="asset-img" alt={asset.attributes.alt || asset.getFilename()} src={asset.getSrc()} />
+                    {#await getSrc(asset.getSrc())}
+                        <svg class="asset-img" aria-label="Loading image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="2" r="0" fill="currentColor"><animate attributeName="r" begin="0" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(45 12 12)"><animate attributeName="r" begin="0.125s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(90 12 12)"><animate attributeName="r" begin="0.25s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(135 12 12)"><animate attributeName="r" begin="0.375s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(180 12 12)"><animate attributeName="r" begin="0.5s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(225 12 12)"><animate attributeName="r" begin="0.625s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(270 12 12)"><animate attributeName="r" begin="0.75s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle><circle cx="12" cy="2" r="0" fill="currentColor" transform="rotate(315 12 12)"><animate attributeName="r" begin="0.875s" calcMode="spline" dur="1s" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" repeatCount="indefinite" values="0;2;0;0"/></circle></svg>
+                    {:then src}
+                        <img class="asset-img" alt={asset.attributes.alt || asset.getFilename()} src={src} />
+                    {:catch error}
+                        <svg class="asset-img" aria-label="Error {error.message}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 14.54L19.21 12a1 1 0 0 0-1.42 0L15 14.84L12.21 12a1 1 0 0 0-1.42 0L8.5 14.34L6.21 12a1 1 0 0 0-1.42 0l-2.5 2.5a1 1 0 0 0-.21.33a1 1 0 0 0-.08.38V19a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-3.75a1 1 0 0 0-.08-.38a1 1 0 0 0-.21-.33ZM20 19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3.34l1.5-1.5l2.29 2.3a1 1 0 0 0 1.42 0l2.29-2.3L14.29 17a1 1 0 0 0 1.42 0l2.79-2.8l1.5 1.5ZM19 2H5a3 3 0 0 0-3 3v5.26a1.17 1.17 0 0 0 0 .27v.1a1 1 0 0 0 1.66.31L5.5 9.16l2.29 2.3a1 1 0 0 0 1.42 0l2.29-2.3L14.29 12a1 1 0 0 0 1.42 0l2.79-2.8l1.77 1.78a1 1 0 0 0 1.66-.31a.28.28 0 0 0 0-.09a.88.88 0 0 0 .06-.28V5A3 3 0 0 0 19 2Zm1 5.84L19.21 7a1 1 0 0 0-1.42 0L15 9.84L12.21 7a1 1 0 0 0-1.42 0L8.5 9.34L6.21 7a1 1 0 0 0-1.42 0L4 7.84V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z"/></svg>
+                    {/await}
                 {:else}
 	                <div class="otherasset {(asset.attributes.subtype || asset.getType())?.split('.')?.[0].replaceAll('+', '-')}">{(asset.attributes.subtype || asset.getType())?.split('.')?.[0].replaceAll('+', '-') || "Unknown type"}</div>
                     <div class="otherassetname">{asset.attributes?.meta?.original_name || "no name"}</div>
@@ -166,8 +172,6 @@
         aspect-ratio: 1.5;
         margin-left: auto;
         margin-right: auto;
-        transition: width 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
-
     }
     .asset:hover .asset-img, .asset:focus-within .asset-img {
         object-fit: contain;
@@ -218,11 +222,66 @@
 </style>
 
 <script>
+    import { onDestroy } from 'svelte';
+    import { Mutex } from 'async-mutex';
+    import ExpiryMap from 'expiry-map';
+
     export let select;
     export let remove;
     export let assets;
     export let filter;
+    export let picapromise;
+
+    const mutex = new Mutex();
+    const canvasCache = new ExpiryMap(1000 * 60, []);
+    const cache = new Map();
+    const toCancel = [];
+    onDestroy(() => toCancel.forEach(i => i()));
+
+    async function loadImage(url, elem) {
+        return new Promise((resolve, reject) => {
+            elem.onload = () => resolve(elem);
+            elem.onerror = reject;
+            elem.src = url;
+            if(elem.complete) {
+                resolve(elem);
+            }
+        });
+    }
+
+     function getSrc(src) {
+        if(cache.has(src)) {
+            return cache.get(src);
+        }
+        const taskMaker = async () => {
+            const pica = await picapromise;
+            const mimg = await loadImage(src, new Image());
+            const ratio = mimg.naturalHeight / mimg.naturalWidth;
+            const w = 200;
+            const h = w * ratio;
+            const r = await mutex.runExclusive(async () => {
+                const cancelToken = new Promise((_, rej) => {
+                    toCancel.push(rej);
+                });
+                let canvas = canvasCache.get(`${w}-${h}`);
+                if(!canvas) {
+                    canvas = new OffscreenCanvas(w, h);
+                    canvasCache.set(`${w}-${h}`, canvas);
+                }
+                const t = await pica.resize(mimg, canvas, { cancelToken });
+                const blob = await pica.toBlob(t, 'image/jpeg');
+                toCancel.pop();
+                return URL.createObjectURL(blob);
+            });
+            return r;
+        }
+        const task = taskMaker();
+        cache.set(src, task);
+        return task;
+    }
+
     $: filterassets = assets.filter(asset => !filter.length || filter.some(type => (asset.attributes.subtype || '').includes(type) || asset.getType().includes(type)));
     $: notshowncount = assets.length - filterassets.length;
+
     const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
 </script>
