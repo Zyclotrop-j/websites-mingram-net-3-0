@@ -233,7 +233,20 @@
                 try {
                     const prompt = editor.getText({ blockSeparator: "\n" });
                     edt.runCommand('status:start', { component: 'ai-textgen', msg: `Running complesion text of ${prompt.length} chars` });
-                    const [{generated_text: text}] = await edt.runCommand('ai:textgen2', { args: [prompt] });
+                    const resp = await edt.runCommand('ai:textgen2', { args: [prompt, {
+                            // https://huggingface.co/docs/transformers.js/api/utils/generation#module_utils/generation.GenerationConfig
+                        max_new_tokens: 500, // or max_length
+                        min_new_tokens: 200, // or min_length
+                        // max_time
+                        // temperature: 0.9,
+                        repetition_penalty: 3.0,
+                        // no_repeat_ngram_size: 3,
+
+                        // top_k: 20,
+                        // do_sample: true,
+                        // output_scores
+                    }] });
+                    const text = resp?.[0]?.generated_text ?? resp?.[0] ?? resp;
                     const textMinusOriginal = text.replace(prompt.trim(), '');
                     // t2tgen
                     editor.chain().focus('end').createParagraphNear().insertContent(textMinusOriginal).run();

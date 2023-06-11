@@ -64,6 +64,11 @@ async function main(editor, toast) {
         const res = await (await readyProm).run('imagetotext', ...(options?.args ?? []));
         return res;
     });
+    commands.add('ai:chat', async (editor, sender, options = { args: [] }) => {
+        await readyProm;
+        const res = await (await readyProm).run('chat', ...(options?.args ?? []));
+        return res;
+    });
     
 }
 

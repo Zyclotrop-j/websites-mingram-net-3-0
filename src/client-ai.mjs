@@ -1,6 +1,8 @@
 import ProcessConcurrently from 'iterate-async';
 import * as Comlink from "comlink";
 
+// todo: move to web-worker or better shared worker!
+
 const logs = [];
 globalThis.console.log = (...args) => logs.push(['log', args]);
 globalThis.console.warn = (...args) => logs.push(['warn', args]);
@@ -46,12 +48,16 @@ const main = async () => {
     const { pipeline } = await import('@xenova/transformers');
     await share('LOADING');
 
+    // navigator.deviceMemory (in GB) // 0.25, 0.5, 1, 2, 4, 8
+
     await ProcessConcurrently((item, { pipeline }, meta) => load({pipeline, meta}, ...item), [
         // see https://github.com/xenova/transformers.js/blob/d279ec3c86882d8330c4027a58428e203a8a2820/src/pipelines.js#L1244
 
         //['sentiment-analysis', 'classify'],
         ['text-generation', 'textgen'], // uses gtp2 by default
-        ['text-generation', 'textgen2', 'Xenova/gpt-neo-125M'],
+        //['text-generation', 'textgen', 'Xenova/distilgpt2'],
+        //['text-generation', 'textgen', 'Xenova/gpt-neo-125M'],
+        ['text2text-generation', 'textgen2', 'Xenova/LaMini-Flan-T5-783M'], 
         ['text2text-generation', 't2tgen'],
         //['fill-mask', 'fillmask'],
         //['question-answering', 'qa'],
