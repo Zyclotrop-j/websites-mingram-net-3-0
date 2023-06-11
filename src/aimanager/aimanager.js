@@ -7,6 +7,9 @@ async function main(editor, toast) {
         await new Promise((resolve) => {
             const q = new URL(window.location);
             q.port = '3002';
+            ifr['allow-scripts'] = true;
+            //ifr['allow-same-origin'] = true;
+            //ifr['allow-scripts'] = true;
             ifr.onload = resolve;
             ifr.src = `${q.origin}/client-ai.html`;
             ifr.style.display = 'none';

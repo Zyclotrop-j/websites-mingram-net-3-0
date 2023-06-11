@@ -64,7 +64,8 @@ const workerMeta = await buildRXWorker();
 await fs.writeFile('build/meta.rx-worker.json', JSON.stringify(workerMeta.metafile));
 
 const clientAiMeta = await buildClientAi();
-await fs.writeFile('build/meta.client-ai.json', JSON.stringify(clientAiMeta.metafile));
+await fs.writeFile('build/meta.client-ai.json', JSON.stringify(clientAiMeta.metafile1));
+await fs.writeFile('build/meta.client-ai-worker.json', JSON.stringify(clientAiMeta.metafile2));
 
 await buildSW({
   index: meta1,
