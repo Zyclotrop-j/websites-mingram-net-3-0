@@ -4,6 +4,7 @@ import { sassPlugin } from 'esbuild-sass-plugin'
 import sveltePlugin from "esbuild-svelte";
 import buildSW from "./build-sw.mjs";
 import buildRXWorker from "./build-rx-worker.mjs";
+import buildClientAi from "./build-client-ai.mjs";
 
 await fs.cp('static/fav', 'build', { recursive: true });
 
@@ -61,6 +62,9 @@ await fs.writeFile('build/meta.website.json', JSON.stringify(meta2.metafile));
 
 const workerMeta = await buildRXWorker();
 await fs.writeFile('build/meta.rx-worker.json', JSON.stringify(workerMeta.metafile));
+
+const clientAiMeta = await buildClientAi();
+await fs.writeFile('build/meta.client-ai.json', JSON.stringify(clientAiMeta.metafile));
 
 await buildSW({
   index: meta1,

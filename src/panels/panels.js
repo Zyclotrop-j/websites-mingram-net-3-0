@@ -12,9 +12,11 @@ export default function(editor) {
         id: 'open-pages',
         className: 'fa fa-file-o',
         attributes: {
-            title: 'Take Screenshot'
+            title: 'Open pages'
         },
         command: 'open-pages',
         togglable: false
     });
+
+
 }

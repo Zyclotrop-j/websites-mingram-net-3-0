@@ -20,6 +20,9 @@
     --shadow: 0 10px 15px -3px rgba(36,69,101,0.19),0 4px 6px -2px #d0dce8;
     --shadow-active: 0 0 0 2px currentColor,0 10px 15px -3px rgba(36,69,101,0.19),0 4px 6px -2px #d0dce8;
 }
+body {
+    margin: 0px;
+}
 
 .sr-hidden {
     position: absolute !important;
@@ -80,6 +83,49 @@ details .colorpicker .isOpen.wrapper  {
 }
 .gjs-rte-toolbar {
     min-height: 100px;
+}
+.gjs-pn-panel.gjs-pn-status {
+    position: relative;
+    width: 15em;
+    display: flex;
+    max-height: 30px;
+}
+.gjs-pn-panel.gjs-pn-status svg {
+    width: 30px;
+    height: 30px;
+}
+.gjs-pn-panel.gjs-pn-status .trigger.loading > .loading {
+    display: block;
+}
+.gjs-pn-panel.gjs-pn-status .trigger.loading > .done {
+    display: none;
+}
+.gjs-pn-panel.gjs-pn-status .trigger:not(.loading) > .loading {
+    display: none;
+}
+.gjs-pn-panel.gjs-pn-status .trigger:not(.loading) > .done {
+    display: block;
+}
+.gjs-pn-panel.gjs-pn-status .trigger > ul.target {
+    background: #444;
+    list-style-type: none;
+    min-width: 16em;
+    padding: 0.8em;
+    position: absolute;
+    top: calc( 100% - 2px );
+    left: 0px;
+    display: none;
+}
+.gjs-pn-panel.gjs-pn-status .trigger.loading:hover > ul.target {
+    display: block;
+}
+.gjs-pn-panel.gjs-pn-status .gjs-pn-buttons {
+    display: none;
+}
+.gjs-pn-panel.gjs-pn-devices-c {
+    top: 0px;
+    right: 30%;
+    padding-right: 1em;
 }
 .customassetmanager {
     display: flex;
